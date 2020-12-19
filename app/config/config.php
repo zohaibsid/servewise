@@ -15,9 +15,5 @@ $config = [
 'IMAGE_PATH'=> '../app/view/img/',
 'FONTAWESOME_PATH' => '../app/view/css/font-awesome/css/font-awesome.css',
 'FONTAWESOMEMIN_PATH' => '../app/view/css/font-awesome/css/font-awesome.min.css',
-
-
-
-
 ];
 require $config['LIB_PATH'] . 'functions.php';
