@@ -17,5 +17,6 @@ $config = [
 'FONTAWESOMEMIN_PATH' => '../app/view/css/font-awesome/css/font-awesome.min.css',
 
 // muzzamil
+	//added by zohaib
 ];
 require $config['LIB_PATH'] . 'functions.php';
