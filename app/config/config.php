@@ -9,14 +9,14 @@ $config = [
 'SUBSTYLE_PATH' => '../app/view/css/navigationpage.css',
 'AOSSTYLE_PATH' => '../app/view/css/aos.css',
 'FONTS_PATH' => '../app/view/css/fonts.css',
+'DASHBOARD_PATH' => '../app/view/css/dashboard.css',
+'FONTAWSOME' => '../app/view/font-awesome-4.7.0/css/font-awesome.min.css',
 'JQUREY_PATH' => '../app/view/js/jqurey.js',
 'JS_PATH' => '../app/view/js/core.js',
+'JS_PATH_DASHBOARD' => '../app/view/js/dashboard/core.js',
 'AOSJS_PATH' => '../app/view/js/aos.js',
 'IMAGE_PATH'=> '../app/view/img/',
-'FONTAWESOME_PATH' => '../app/view/css/font-awesome/css/font-awesome.css',
-'FONTAWESOMEMIN_PATH' => '../app/view/css/font-awesome/css/font-awesome.min.css',
 
-// muzzamil
-	//added by zohaib
+
 ];
 require $config['LIB_PATH'] . 'functions.php';

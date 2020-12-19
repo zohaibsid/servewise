@@ -14,7 +14,6 @@ require APPLICATION_PATH . DS . 'model' . DS  . 'classDatabaseManager.php';
 
 $user = new User();
 	
-echo '1';
 
 	if(isset($_POST["email"])){
 
