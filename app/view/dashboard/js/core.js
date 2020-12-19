@@ -1,3 +1,19 @@
+var ProductImgGrid = document.getElementById("ProductImgGrid");
+var SmallImgGrid = document.getElementsByClassName("small-grid")
+
+SmallImgGrid[0].onclick = function(){
+	ProductImgGrid.src = SmallImgGrid[0].src;
+}
+SmallImgGrid[1].onclick = function(){
+	ProductImgGrid.src = SmallImgGrid[1].src;
+}
+SmallImgGrid[2].onclick = function(){
+	ProductImgGrid.src = SmallImgGrid[2].src;
+}
+SmallImgGrid[3].onclick = function(){
+	ProductImgGrid.src = SmallImgGrid[3].src;
+}
+
 const primaryColor = '#4834d4'
 const warningColor = '#f0932b'
 const successColor = '#6ab04c'
