@@ -279,14 +279,14 @@
 
 .wrapper {
 	padding: 10px;
-	margin-left: 82px;
+	margin-left: 250px;
 	padding-top: 75px;
 	background: var(--second-bg-color);
 	transition: margin-left .5s;
 }
 
 .sidebar {
-	width: 82px;
+	width: 250px;
 	height: 100vh;
 	position: fixed;
 	margin-top: 65px;
@@ -297,9 +297,6 @@
 	transition: width .5s;
 }
 
-.sidebar:hover {
-	width: 250px;
-}
 
 .sidebar-nav {
 	list-style: none;
@@ -313,6 +310,18 @@
 
 .sidebar-nav-item {
 	width: 100%;
+}
+
+.sidebar .sidebar-nav-item .sub li a{
+	display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px 0px;
+    border-bottom: 1px solid;
+}
+
+.sidebar .sidebar-nav-item .sub li a .sub-menu-inner-icon{
+	padding: 0px 15px;
 }
 
 .sidebar-nav-link {
