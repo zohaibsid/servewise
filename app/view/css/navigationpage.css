@@ -1894,6 +1894,25 @@ a:hover {
   padding: 0 2rem;
 }
 
+.container-varification .login-content .btn{
+  display: block;
+    width: 100%;
+    height: 50px;
+    border-radius: 25px;
+    outline: none;
+    border: none;
+    background-image: linear-gradient(to right, #e88747, coral, #e88747);
+    background-size: 200%;
+    font-size: 1.2rem;
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+    text-transform: uppercase;
+    margin: 1rem 0;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.5s;
+}
+
 .img {
   display: flex;
   justify-content: flex-end;
