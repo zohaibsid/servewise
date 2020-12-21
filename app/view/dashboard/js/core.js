@@ -1,3 +1,30 @@
+const inputs = document.querySelectorAll(".input");
+
+function addClass() {
+  let parent = this.parentNode.parentNode;
+  parent.classList.add("focus");
+}
+
+function removeClass() {
+  let parent = this.parentNode.parentNode;
+  if (this.value == "") {
+    parent.classList.remove("focus");
+  }
+}
+
+inputs.forEach((input) => {
+  input.addEventListener("focus", addClass);
+  input.addEventListener("blur", removeClass);
+});                      
+        
+$('#password, #confirmPassword').on('keyup', function () {
+  if ($('#password').val() == $('#confirmPassword').val()) {
+    $('#message').html('Matching').css('color', 'green');
+  } else 
+    $('#message').html('Not Matching').css('color', 'red');
+});
+
+
 var ProductImgGrid = document.getElementById("ProductImgGrid");
 var SmallImgGrid = document.getElementsByClassName("small-grid")
 
@@ -129,3 +156,20 @@ var lineChart = new Chart(ctx, {
 		bezierCurve: false,
 	}
 })
+
+var ProductImgGrid = document.getElementById("ProductImgGrid");
+var SmallImgGrid = document.getElementsByClassName("small-grid")
+
+SmallImgGrid[0].onclick = function(){
+	ProductImgGrid.src = SmallImgGrid[0].src;
+}
+SmallImgGrid[1].onclick = function(){
+	ProductImgGrid.src = SmallImgGrid[1].src;
+}
+SmallImgGrid[2].onclick = function(){
+	ProductImgGrid.src = SmallImgGrid[2].src;
+}
+SmallImgGrid[3].onclick = function(){
+	ProductImgGrid.src = SmallImgGrid[3].src;
+}
+

@@ -13,7 +13,7 @@ $config = [
 'FONTAWSOME' => '../app/view/font-awesome-4.7.0/css/font-awesome.min.css',
 'JQUREY_PATH' => '../app/view/js/jqurey.js',
 'JS_PATH' => '../app/view/js/core.js',
-'JS_PATH_DASHBOARD' => '../app/view/js/dashboard/core.js',
+'JS_PATH_DASHBOARD' => '../app/view/dashboard/js/core.js',
 'AOSJS_PATH' => '../app/view/js/aos.js',
 'IMAGE_PATH'=> '../app/view/img/',
 
