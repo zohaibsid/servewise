@@ -1131,7 +1131,19 @@ width: 100%;
   width: 45%;
   overflow: hidden;
   margin: 0px 10px;
+  box-shadow: 0px 3px 6px rgb(0, 0, 0,0.2);
 }
+.section2-blog-content .section2-blog-left-side .section2-blog-row .section2-blog-row-content1 .section2-blog-img{
+  width: 462px;
+  height: 240px;
+  overflow: hidden;
+}
+
+.section2-blog-content .section2-blog-left-side .section2-blog-row .section2-blog-row-content1 .section2-blog-img img{
+  max-width: 100%;
+}
+
+
 .section2-blog-right-side .section2-clog-right-side{
   font-size: 21px;
   font-weight: 700;
@@ -1192,6 +1204,7 @@ width: 100%;
   justify-content: center;
   align-items: center;
   padding-bottom: 20px;
+  margin: auto;
 }
 
 .section2-blog-email form input{
@@ -1202,7 +1215,7 @@ width: 100%;
   padding: 0px 30px;
 }
 .section2-blog-email form button{
-  font-size: 21px;
+  font-size: 18px;
   background-color: black;
   color: white;
   height: 45px;
@@ -1456,11 +1469,15 @@ width: 100%;
 
 .section1-Guide .section1-Guide-content .guide-heading-btn{
   font-size: 21px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .section1-Guide .section1-Guide-content .guide-heading-btn a{
   text-decoration: none;
   color: #555555;
   transition: .3s ease all;
+  padding: 0px 20px;
 }
 .section1-Guide .section1-Guide-content .guide-heading-btn a:hover{
   color: blue;
@@ -1620,7 +1637,7 @@ width: 100%;
 }
 
 .showcase-theme .s-theme-content .s-theme-row .s-theme-1{
-  flex-basis: 40%;
+  flex-basis: 35%;
   margin: 20px 20px;
   box-shadow: 0px 3px 6px rgb(0, 0, 0,0.5);
   transition: .3s ease all;
@@ -1637,6 +1654,10 @@ width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.showcase-theme .s-theme-content .s-theme-row .s-theme-1 .theme-upper img{
+  max-width: 100%;
 }
 
 .showcase-theme .s-theme-content .s-theme-row .s-theme-1 .theme-Content{
