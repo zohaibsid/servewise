@@ -24,13 +24,17 @@ if($dashboard != NULL){
 include $main_content; 
 ?>
 </section>
-<footer>
+
 <?php 
+
 if($dashboard == NULL){
+	echo "<footer>";
  require($footer);
+ echo "</footer>";
  }
+ 
  ?>
-</footer>
+
 
 
 <script type="text/javascript" src="<?php echo $jqurey;?>"></script>
