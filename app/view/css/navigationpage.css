@@ -21,6 +21,11 @@ body{
     width: 100%;
     transition: .5s ease all;
 }
+
+main{
+  overflow: hidden;
+}
+
 /* hero-section */
 .section-about-page-heading{
     width: 100%;
@@ -216,11 +221,11 @@ body{
     color: blue;
     transform:rotate(360deg) scale(1.2) ;
 }
-.about-social-icons .fa-twitter-square{
+.about-social-icons .fa-twitter{
     color: #a0a0a0;
     transition: .5s ease all;
 }
-.about-social-icons .fa-twitter-square:hover{
+.about-social-icons .fa-twitter:hover{
     color: blue;
     transform: rotate(-360deg) scale(1.2);
 }
@@ -984,6 +989,10 @@ width: 100%;
   align-items: center;
 }
 
+.section4-email-content .section4-btn form{
+  display: flex;
+}
+
 .section4-email-content .section4-btn form input{
   width: 300px;
   height: 50px;
@@ -1122,7 +1131,19 @@ width: 100%;
   width: 45%;
   overflow: hidden;
   margin: 0px 10px;
+  box-shadow: 0px 3px 6px rgb(0, 0, 0,0.2);
 }
+.section2-blog-content .section2-blog-left-side .section2-blog-row .section2-blog-row-content1 .section2-blog-img{
+  width: 462px;
+  height: 240px;
+  overflow: hidden;
+}
+
+.section2-blog-content .section2-blog-left-side .section2-blog-row .section2-blog-row-content1 .section2-blog-img img{
+  max-width: 100%;
+}
+
+
 .section2-blog-right-side .section2-clog-right-side{
   font-size: 21px;
   font-weight: 700;
@@ -1183,6 +1204,7 @@ width: 100%;
   justify-content: center;
   align-items: center;
   padding-bottom: 20px;
+  margin: auto;
 }
 
 .section2-blog-email form input{
@@ -1193,7 +1215,7 @@ width: 100%;
   padding: 0px 30px;
 }
 .section2-blog-email form button{
-  font-size: 21px;
+  font-size: 18px;
   background-color: black;
   color: white;
   height: 45px;
@@ -1241,6 +1263,13 @@ width: 100%;
   flex-direction: column;
   width: 100%;
 }
+
+.section1-customer .section1-customer-content .customer-search-box form{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
 .section1-customer .section1-customer-content .customer-search-box form input{
   width: 600px;
   height: 40px;
@@ -1308,6 +1337,8 @@ width: 100%;
 .section2-customer .section2-customer-content .section2-card-customer .c-card-btn{
   text-align: center;
   padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
 }
 .section2-customer .section2-customer-content .section2-card-customer .c-card-btn a{
   text-decoration: none;
@@ -1315,12 +1346,13 @@ width: 100%;
   background-color: black;
   padding: 10px 15px;
   border-radius: 10px;
+  width: 50%;
+  text-align: center;
   transition: .3s ease all;
 }
 .section2-customer .section2-customer-content .section2-card-customer .c-card-btn a:hover{
   background-color: white;
   color: black;
-  letter-spacing: 1px;
   border: 1px solid black;
   font-weight: 700;
 }
@@ -1337,7 +1369,11 @@ width: 100%;
   font-size: 18px;
   text-align: center;
   padding: 10px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 .customer-detail .customer-detail-content .c-d-c-2{}
 
 /* Customer-detail END */
@@ -1433,11 +1469,15 @@ width: 100%;
 
 .section1-Guide .section1-Guide-content .guide-heading-btn{
   font-size: 21px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .section1-Guide .section1-Guide-content .guide-heading-btn a{
   text-decoration: none;
   color: #555555;
   transition: .3s ease all;
+  padding: 0px 20px;
 }
 .section1-Guide .section1-Guide-content .guide-heading-btn a:hover{
   color: blue;
@@ -1597,7 +1637,7 @@ width: 100%;
 }
 
 .showcase-theme .s-theme-content .s-theme-row .s-theme-1{
-  flex-basis: 40%;
+  flex-basis: 35%;
   margin: 20px 20px;
   box-shadow: 0px 3px 6px rgb(0, 0, 0,0.5);
   transition: .3s ease all;
@@ -1614,6 +1654,10 @@ width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.showcase-theme .s-theme-content .s-theme-row .s-theme-1 .theme-upper img{
+  max-width: 100%;
 }
 
 .showcase-theme .s-theme-content .s-theme-row .s-theme-1 .theme-Content{
@@ -1848,6 +1892,25 @@ a:hover {
   justify-content: center;
   align-items: center;
   padding: 0 2rem;
+}
+
+.container-varification .login-content .btn{
+  display: block;
+    width: 100%;
+    height: 50px;
+    border-radius: 25px;
+    outline: none;
+    border: none;
+    background-image: linear-gradient(to right, #e88747, coral, #e88747);
+    background-size: 200%;
+    font-size: 1.2rem;
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+    text-transform: uppercase;
+    margin: 1rem 0;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.5s;
 }
 
 .img {
