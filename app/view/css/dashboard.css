@@ -350,7 +350,7 @@
 	background: var(--second-bg-color);
 }
 
-.sidebar-nav-link.active {
+.sidebar-nav-link {
 	background: var(--second-bg-color);
     color: var(--danger-color);
     border: none;
@@ -360,11 +360,11 @@
     color: white;
 }
 
-.sidebar-nav-link.active div {
+.sidebar-nav-link div {
 	border-left: 5px solid var(--danger-color);
 }
 
-.sidebar-nav-link.active i {
+.sidebar-nav-link i {
 	color: var(--danger-color);
 	margin-left: -5px;
 }
