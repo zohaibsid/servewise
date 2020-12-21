@@ -21,6 +21,11 @@ body{
     width: 100%;
     transition: .5s ease all;
 }
+
+main{
+  overflow: hidden;
+}
+
 /* hero-section */
 .section-about-page-heading{
     width: 100%;
@@ -216,11 +221,11 @@ body{
     color: blue;
     transform:rotate(360deg) scale(1.2) ;
 }
-.about-social-icons .fa-twitter-square{
+.about-social-icons .fa-twitter{
     color: #a0a0a0;
     transition: .5s ease all;
 }
-.about-social-icons .fa-twitter-square:hover{
+.about-social-icons .fa-twitter:hover{
     color: blue;
     transform: rotate(-360deg) scale(1.2);
 }
@@ -984,6 +989,10 @@ width: 100%;
   align-items: center;
 }
 
+.section4-email-content .section4-btn form{
+  display: flex;
+}
+
 .section4-email-content .section4-btn form input{
   width: 300px;
   height: 50px;
@@ -1241,6 +1250,13 @@ width: 100%;
   flex-direction: column;
   width: 100%;
 }
+
+.section1-customer .section1-customer-content .customer-search-box form{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
 .section1-customer .section1-customer-content .customer-search-box form input{
   width: 600px;
   height: 40px;
@@ -1308,6 +1324,8 @@ width: 100%;
 .section2-customer .section2-customer-content .section2-card-customer .c-card-btn{
   text-align: center;
   padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
 }
 .section2-customer .section2-customer-content .section2-card-customer .c-card-btn a{
   text-decoration: none;
@@ -1315,12 +1333,13 @@ width: 100%;
   background-color: black;
   padding: 10px 15px;
   border-radius: 10px;
+  width: 50%;
+  text-align: center;
   transition: .3s ease all;
 }
 .section2-customer .section2-customer-content .section2-card-customer .c-card-btn a:hover{
   background-color: white;
   color: black;
-  letter-spacing: 1px;
   border: 1px solid black;
   font-weight: 700;
 }
@@ -1337,7 +1356,11 @@ width: 100%;
   font-size: 18px;
   text-align: center;
   padding: 10px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 .customer-detail .customer-detail-content .c-d-c-2{}
 
 /* Customer-detail END */
