@@ -8,13 +8,13 @@
 session_start(); // ready to go!
 //require ('../model/user/userClass.php');
 //require ('../model/classDatabaseManager.php');
+
 require APPLICATION_PATH . DS . 'model' . DS  . 'user' . DS . 'userClass.php';
 require APPLICATION_PATH . DS . 'model' . DS  . 'classDatabaseManager.php';
 
 
 $user = new User();
 	
-echo '1';
 
 	if(isset($_POST["email"])){
 
