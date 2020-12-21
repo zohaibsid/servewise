@@ -129,6 +129,12 @@
 	padding: 10px;
 }
 
+.nav-item{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 .nav-item .avt img {
 	width: 39px;
 	height: 39px;

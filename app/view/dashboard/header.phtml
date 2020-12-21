@@ -10,13 +10,14 @@
 				</a>
 			</li>
 			<li class="nav-item">
-				<img src="assets/nazreen logo web.png" alt="Admin logo" class="logo logo-light">
-					</li>
+			<a href="?page=home">	<img src="<?php echo $image;?>logo.png" alt="Admin logo" class="logo logo-light"></a>
+			<a href="?page=home">   <i class="fa fa-globe" aria-hidden="true"></i> </a>
+			</li>
 		</ul>
 		<!-- end nav left -->
 		<!-- form -->
 		<form class="navbar-search">
-			<input type="text" name="Search" class="navbar-search-input" placeholder="What you looking for...">
+		<a href="#">	<input type="text" name="Search" class="navbar-search-input" placeholder="What you looking for...">
 			<i class="fa fa-search"></i>
 		</form>
 		<!-- end form -->
@@ -73,7 +74,7 @@
 			</li>
 			<li class="nav-item avt-wrapper">
 				<div class="avt dropdown">
-					
+					<img src="<?php echo $image;?>logo.png" alt="User image" class="dropdown-toggle" data-toggle="user-menu">
 					<ul id="user-menu" class="dropdown-menu">
 						<li  class="dropdown-menu-item">
 							<a class="dropdown-menu-link">
