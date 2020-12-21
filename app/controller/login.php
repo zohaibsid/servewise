@@ -8,15 +8,22 @@
 session_start(); // ready to go!
 //require ('../model/user/userClass.php');
 //require ('../model/classDatabaseManager.php');
+defined('APPLICATION_INNERPATH') || define('APPLICATION_INNERPATH', realpath( dirname(__FILE__) . '/../'));
 
-require APPLICATION_PATH . DS . 'model' . DS  . 'user' . DS . 'userClass.php';
-require APPLICATION_PATH . DS . 'model' . DS  . 'classDatabaseManager.php';
+echo 0;
+$PATH =  constant("APPLICATION_INNERPATH");
 
+require $PATH . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'service_config.php'; 
+require $config_service['DB_CLASS'];
+require $config_service['USER_CLASS'];
+//require APPLICATION_INNERPATH   . DSINNER  . 'user' . DSINNER . 'userClass.php';
+//require APPLICATION_INNERPATH  . DSINNER  . 'classDatabaseManager.php';
 
 $user = new User();
-	
+
 
 	if(isset($_POST["email"])){
+
 
 if(!empty($_POST["password"])){
 			$username = $_POST["email"];
@@ -25,7 +32,7 @@ if(!empty($_POST["password"])){
 			$signIn = $user->newSignIn($username,$password);
 
 			if ($signIn){
-echo '1';
+
 					$_SESSION["logIn"]=$signIn[0]['username'];
 					$_SESSION['email']=$signIn[0]['email_id'];
 					$_SESSION['logInType']=$signIn[0]['user_type'];
@@ -33,29 +40,34 @@ echo '1';
 					$usertype = $signIn[0]['user_type'];
 					echo "<script>alert('".$_SESSION['logInType']."')</script>";
 					if($usertype=='User'){
-					$message[0] = true;
-					$message[1] = "Signed In Successfully";	
-					echo "<script>window.location.href='../View/branch.php';</script>";
-						header("location: ../View/userdashboard.php");
+					// $message[0] = true;
+					// $message[1] = "Signed In Successfully";	
+					// echo "<script>window.location.href='../View/branch.php';</script>";
+					// 	header("location: ../View/userdashboard.php");
+						echo '1';
 
 						}
 						else if($usertype=='Branch'){
-					$message[0] = true;
-					$message[1] = "Signed In Successfully";	
-					echo "<script>window.location.href='../View/details.php';</script>";	
+					// $message[0] = true;
+					// $message[1] = "Signed In Successfully";	
+					// echo "<script>window.location.href='../View/details.php';</script>";
+					echo '2';	
 				}
 				else if($usertype=='Admin'){
-					$message[0] = true;
-					$message[1] = "Signed In Successfully";	
-					echo "<script>window.location.href='../View/adminpage.php';</script>";	
+					// $message[0] = true;
+					// $message[1] = "Signed In Successfully";	
+					// echo "<script>window.location.href='../View/adminpage.php';</script>";
+					echo '3';	
 				} else {
-			echo "<script>window.location.href='../View/login.php?message=SignIn Failed';</script>";	
+			// echo "<script>window.location.href='../View/login.php?message=SignIn Failed';</script>";	
+					echo '1';
 		}
 
 
 
 }else {
-			echo "<script>window.location.href='../View/login.php?message=SignIn Failed';</script>";	
+			// echo "<script>window.location.href='../View/login.php?message=SignIn Failed';</script>";
+			echo '1';	
 		}
 
 

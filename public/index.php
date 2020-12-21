@@ -42,9 +42,9 @@ if (file_exists($model)) {
 	require $model;
 }
 
- if (file_exists($controller)) {
- 	require $controller;
- }
+ // if (file_exists($controller)) {
+ // 	require $controller;
+ // }
 
 
 $main_content = $_404;

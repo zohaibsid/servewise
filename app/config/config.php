@@ -1,4 +1,5 @@
 <?php
+
 $config = [
 'MODEL_PATH' => APPLICATION_PATH . DS . 'model' . DS,   
 'VIEW_PATH' => APPLICATION_PATH . DS . 'view' . DS,
@@ -19,6 +20,6 @@ $config = [
 'FONTAWESOME_PATH' => '../app/view/css/font-awesome/css/font-awesome.css',
 'FONTAWESOMEMIN_PATH' => '../app/view/css/font-awesome/css/font-awesome.min.css',
 
-
 ];
+
 require $config['LIB_PATH'] . 'functions.php';
