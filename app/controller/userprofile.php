@@ -12,8 +12,8 @@ require APPLICATION_PATH . DS . 'model' . DS  . 'classDatabaseManager.php';
 //}
 	$login=new User();
 
-$emailid= $_SESSION["logIn"];
-
+//$emailid= $_SESSION["logIn"];
+$emailid = "zohaibali.sid@gmail.com";
 $olddetails = $login->getuserdetails($emailid);
 
 ?>
