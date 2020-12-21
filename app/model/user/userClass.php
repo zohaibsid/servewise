@@ -26,7 +26,6 @@
 				$result=$this->db->executeQuery($this->query,array($email, $password),"cread");
 				if($result){
 					$_SESSION["logIn"]=$email;
-					$_SESSION['logInName']=$result[0]['name'];
 					$_SESSION['logInId']=$result[0]['user_id'];
 					return true;
 				}

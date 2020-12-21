@@ -3,11 +3,14 @@ session_start();
 //echo $_SESSION["logIn"];
 //echo $_SESSION['logInName'];
 
-//require APPLICATION_PATH . DS . 'model' . DS  . 'vendor' . DS . 'vendorClass.php';
-//require APPLICATION_PATH . DS . 'model' . DS  . 'classDatabaseManager.php';
+defined('APPLICATION_INNERPATH') || define('APPLICATION_INNERPATH', realpath( dirname(__FILE__) . '/../'));
 
-require ("../model/vendor/vendorClass.php");
-require ("../model/classDatabaseManager.php");
+//echo 0;
+$PATH =  constant("APPLICATION_INNERPATH");
+
+require $PATH . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'service_config.php'; 
+require $config_service['DB_CLASS'];
+require $config_service['VENDOR_CLASS'];
 	$vendor=new Vendor();
 	$message=null;
 

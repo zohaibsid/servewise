@@ -10,7 +10,7 @@ session_start(); // ready to go!
 //require ('../model/classDatabaseManager.php');
 defined('APPLICATION_INNERPATH') || define('APPLICATION_INNERPATH', realpath( dirname(__FILE__) . '/../'));
 
-echo 0;
+//echo 0;
 $PATH =  constant("APPLICATION_INNERPATH");
 
 require $PATH . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'service_config.php'; 
@@ -33,32 +33,32 @@ if(!empty($_POST["password"])){
 
 			if ($signIn){
 
-					$_SESSION["logIn"]=$signIn[0]['username'];
-					$_SESSION['email']=$signIn[0]['email_id'];
-					$_SESSION['logInType']=$signIn[0]['user_type'];
-					$_SESSION['user-theme']=$signIn[0]['theme'];
-					$usertype = $signIn[0]['user_type'];
-					echo "<script>alert('".$_SESSION['logInType']."')</script>";
-					if($usertype=='User'){
+					//$_SESSION["logIn"]=$signIn[0]['username'];
+					//$_SESSION['email']=$signIn[0]['email_id'];
+					//$_SESSION['logInType']=$signIn[0]['user_type'];
+				//	$_SESSION['user-theme']=$signIn[0]['theme'];
+				//	$usertype = $signIn[0]['user_type'];
+					//echo "<script>alert('".$_SESSION['logInType']."')</script>";
+					//if($usertype=='User'){
 					// $message[0] = true;
 					// $message[1] = "Signed In Successfully";	
 					// echo "<script>window.location.href='../View/branch.php';</script>";
 					// 	header("location: ../View/userdashboard.php");
-						echo '1';
+						//echo '1';
 
-						}
-						else if($usertype=='Branch'){
+					//	}
+				//		else if($usertype=='Branch'){
 					// $message[0] = true;
 					// $message[1] = "Signed In Successfully";	
 					// echo "<script>window.location.href='../View/details.php';</script>";
-					echo '2';	
-				}
-				else if($usertype=='Admin'){
+				//	echo '2';	
+				//}
+				//else if($usertype=='Admin'){
 					// $message[0] = true;
 					// $message[1] = "Signed In Successfully";	
 					// echo "<script>window.location.href='../View/adminpage.php';</script>";
-					echo '3';	
-				} else {
+				//	echo '3';	
+			//	} else {
 			// echo "<script>window.location.href='../View/login.php?message=SignIn Failed';</script>";	
 					echo '1';
 		}
@@ -67,32 +67,9 @@ if(!empty($_POST["password"])){
 
 }else {
 			// echo "<script>window.location.href='../View/login.php?message=SignIn Failed';</script>";
-			echo '1';	
+			echo '2';	
 		}
+	}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		}
-
-
-
-
-
-
-		}
 		
 ?>

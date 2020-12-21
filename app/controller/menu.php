@@ -2,10 +2,14 @@
 session_start();
 
 
-require APPLICATION_PATH . DS . 'model' . DS  . 'menu' . DS . 'menuClass.php';
+defined('APPLICATION_INNERPATH') || define('APPLICATION_INNERPATH', realpath( dirname(__FILE__) . '/../'));
 
+//echo 0;
+$PATH =  constant("APPLICATION_INNERPATH");
 
-require APPLICATION_PATH . DS . 'model' . DS  . 'classDatabaseManager.php';
+require $PATH . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'service_config.php'; 
+require $config_service['DB_CLASS'];
+require $config_service['MENU_CLASS'];
 
 
 	$menu = new Menu();

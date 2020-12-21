@@ -47,9 +47,9 @@
     var formData = $('#form').serializeArray();
     $.post(url, formData).done(function (data) {
         if(data == 1){
-			alert('success');
+			        window.location.replace("?page=dashboard");
 		}else{
-			alert('error');
+			alert('signin failed');
 		}
     });
 }
