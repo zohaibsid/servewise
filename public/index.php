@@ -9,6 +9,7 @@ if (strpos($page, 'dashboard') !== false) {
 	$path = str_replace("_dashboard","",$page);
 	$page = DS . 'dashboard' . DS . $page;
 	$dashboard = DS . 'dashboard' . DS;
+
 	
 
 }else{
@@ -51,5 +52,6 @@ $main_content = $_404;
 if (file_exists($view)) {
  $main_content = $view;
 }
+
 
 include $config['VIEW_PATH'] . 'layout.phtml';
