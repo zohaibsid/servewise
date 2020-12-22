@@ -17,30 +17,13 @@ inputs.forEach((input) => {
   input.addEventListener("blur", removeClass);
 });                      
         
+
 $('#password, #confirmPassword').on('keyup', function () {
-  if ($('#password').val() == $('#confirmPassword').val()) {
-    $('#message').html('Matching').css('color', 'green');
-  } else 
-    $('#message').html('Not Matching').css('color', 'red');
-});
-
-
-var ProductImgGrid = document.getElementById("ProductImgGrid");
-var SmallImgGrid = document.getElementsByClassName("small-grid")
-
-SmallImgGrid[0].onclick = function(){
-	ProductImgGrid.src = SmallImgGrid[0].src;
-}
-SmallImgGrid[1].onclick = function(){
-	ProductImgGrid.src = SmallImgGrid[1].src;
-}
-SmallImgGrid[2].onclick = function(){
-	ProductImgGrid.src = SmallImgGrid[2].src;
-}
-SmallImgGrid[3].onclick = function(){
-	ProductImgGrid.src = SmallImgGrid[3].src;
-}
-
+	if ($('#password').val() == $('#confirmPassword').val()) {
+	  $('#message').html('Matching').css('color', 'green');
+	} else 
+	  $('#message').html('Not Matching').css('color', 'red');
+  });
 const primaryColor = '#4834d4'
 const warningColor = '#f0932b'
 const successColor = '#6ab04c'
@@ -172,4 +155,9 @@ SmallImgGrid[2].onclick = function(){
 SmallImgGrid[3].onclick = function(){
 	ProductImgGrid.src = SmallImgGrid[3].src;
 }
+
+
+
+
+
 
