@@ -33,33 +33,6 @@ if(!empty($_POST["password"])){
 
 			if ($signIn){
 
-					//$_SESSION["logIn"]=$signIn[0]['username'];
-					//$_SESSION['email']=$signIn[0]['email_id'];
-					//$_SESSION['logInType']=$signIn[0]['user_type'];
-				//	$_SESSION['user-theme']=$signIn[0]['theme'];
-				//	$usertype = $signIn[0]['user_type'];
-					//echo "<script>alert('".$_SESSION['logInType']."')</script>";
-					//if($usertype=='User'){
-					// $message[0] = true;
-					// $message[1] = "Signed In Successfully";	
-					// echo "<script>window.location.href='../View/branch.php';</script>";
-					// 	header("location: ../View/userdashboard.php");
-						//echo '1';
-
-					//	}
-				//		else if($usertype=='Branch'){
-					// $message[0] = true;
-					// $message[1] = "Signed In Successfully";	
-					// echo "<script>window.location.href='../View/details.php';</script>";
-				//	echo '2';	
-				//}
-				//else if($usertype=='Admin'){
-					// $message[0] = true;
-					// $message[1] = "Signed In Successfully";	
-					// echo "<script>window.location.href='../View/adminpage.php';</script>";
-				//	echo '3';	
-			//	} else {
-			// echo "<script>window.location.href='../View/login.php?message=SignIn Failed';</script>";	
 					echo '1';
 		}
 
@@ -67,7 +40,7 @@ if(!empty($_POST["password"])){
 
 }else {
 			// echo "<script>window.location.href='../View/login.php?message=SignIn Failed';</script>";
-			echo '2';	
+			echo '0';	
 		}
 	}
 
