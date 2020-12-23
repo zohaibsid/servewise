@@ -3,6 +3,7 @@ defined('APPLICATION_PATH') || define('APPLICATION_PATH', realpath( dirname(__FI
 const DS = DIRECTORY_SEPARATOR; 
 require APPLICATION_PATH . DS . 'config' . DS . 'config.php';
 
+
 //index.php?page=
 $page = get ('page','home');
 if (strpos($page, 'dashboard') !== false) {
@@ -18,6 +19,8 @@ if (strpos($page, 'dashboard') !== false) {
 	$dashboard = NULL;
 }
 
+
+$dbcalss = APPLICATION_PATH . DS . 'model' . DS . 'classDatabaseManager.php';
 $model = $config['MODEL_PATH'] . $path . '.php';
 $controller = $config['CONTROLLER_PATH'] . $path .  '.php';
 $GLOBALS['user_model']   = $config['MODEL_PATH'] .  'user/userClass.php';

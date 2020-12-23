@@ -3,10 +3,10 @@ session_start();
 //echo $_SESSION["logIn"];
 //echo $_SESSION['logInName'];
 
-require("categoryClass.php");
-require("../classDatabaseManager.php");
+ require("category/categoryClass.php");
+ require($dbcalss);
 
-	$category=new Category();
+	$category = new Category();
 	$message=null;
 
 	
