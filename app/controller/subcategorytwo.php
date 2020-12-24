@@ -19,7 +19,7 @@ require $config_service['CATEGORY_CLASS'];
 //deleting category...
 	$categoryid = $_GET["id"];
 
-	$deleted = $category->deletecategory($categoryid);
+	$deleted = $category->deletecategorytwo($categoryid);
 if (!empty($deleted)){
 	
 	echo "deleted";	
@@ -31,20 +31,20 @@ if (!empty($deleted)){
 	//print_r($olddetails);
 	if(isset($_POST["category"])){
 	
-	$categoryname = $_POST["category"];
+	$categoryid = $_POST["categoryid"];
+		$categoryname = $_POST["category"];
     $createdby = "6";    
 	
-	$vbid = "1";
 	
-		$addedcategory = $category->addnewcategory($categoryname,$createdby,$vbid);
-		if (empty($addedcategory)){
+		$addedcategory = $category->addnewsubcategory($categoryid,$categoryname,$createdby);
+		if (!empty($addedcategory)){
 			//$message[0] = true;
 			//$message[1] = "Updated Successfully";	
 			//echo "Successfully Updated";
 				//header("location: ../View/userprofile.php");
-		echo "0";
+		echo "1";
         } else {
-			echo "1";		
+			echo "0";		
         }
 	
 	}

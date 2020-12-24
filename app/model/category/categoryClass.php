@@ -22,12 +22,49 @@
 						}
 				}
 		
+		function addnewsubcategory($categoryid,$categoryname,$createdby)
+{
+					$this->query="insert into subcategory_2_level(category_id,sub_category,created_by,created_date) values(?,?,?,CURRENT_DATE())";
+				$result=$this->db->executeQuery($this->query,array($categoryid,$categoryname,$createdby),"create");
+					if($result){
+						return $result;
+						}    
+				    else{
+						return false;
+						}
+				}
+		
+		function addnewsubcategorythree($scid,$categoryname,$createdby)
+{
+					$this->query="insert into subcategory_3_level(sc_id,ss_category,created_by,created_date) values(?,?,?,CURRENT_DATE())";
+				$result=$this->db->executeQuery($this->query,array($scid,$categoryname,$createdby),"create");
+					if($result){
+						return $result;
+						}    
+				    else{
+						return false;
+						}
+				}
         	function deletecategory($categoryid){
 					$this->query="delete from category where category_id=?";
 					$result=$this->db->executeQuery($this->query,array($categoryid),"delete");
 					return $result;
 
 				}
+		
+		function deletecategorytwo($categoryid){
+					$this->query="delete from subcategory_2_level where sc_id=?";
+					$result=$this->db->executeQuery($this->query,array($categoryid),"delete");
+					return $result;
+
+				}
+		function deletecategorythree($categoryid){
+					$this->query="delete from subcategory_3_level where ssc_id=?";
+					$result=$this->db->executeQuery($this->query,array($categoryid),"delete");
+					return $result;
+
+				}
+		
 		
 		
 				function getcategorybyvbid($vbid){
@@ -36,9 +73,52 @@
 				return $result;
 				}
 				
+				function getcategorybyid($categoryid){
+					$this->query="select * from subcategory_2_level where category_id=? ";
+				$result=$this->db->executeQuery($this->query,array($categoryid),"cread");
+				return $result;
+				}
+		
+				function getcategories(){
+					$this->query="SELECT category.category_id,category.name,subcategory_2_level.sc_id,subcategory_2_level.sub_category,subcategory_2_level.sc_id,subcategory_3_level.ss_category FROM category,subcategory_2_level,subcategory_3_level,vendor_branch WHERE category.vb_id = vendor_branch.vb_id";
+				$result=$this->db->executeQuery($this->query,array(),"sread");
+				return $result;
+				}
+		
+			function getcategorythreebyid($categoryid){
+					$this->query="select * from subcategory_3_level where sc_id=? ";
+				$result=$this->db->executeQuery($this->query,array($categoryid),"cread");
+				return $result;
+				}
+		
+		
 				function updatecategorybyid($categoryname,$categoryid)
 {
 					$this->query="UPDATE `category` SET `name`= ? WHERE `category_id` = ?";
+				$result=$this->db->executeQuery($this->query,array($categoryname,$categoryid),"update");
+					if($result){
+						return true;
+						}    
+				    else{
+						return false;
+						}
+				}
+		
+		function updatesubcategory2byid($categoryname,$categoryid)
+{
+					$this->query="UPDATE `subcategory_2_level` SET `sub_category`= ? WHERE `sc_id` = ?";
+				$result=$this->db->executeQuery($this->query,array($categoryname,$categoryid),"update");
+					if($result){
+						return true;
+						}    
+				    else{
+						return false;
+						}
+				}
+		
+		function updatesubcategory3byid($categoryname,$categoryid)
+{
+					$this->query="UPDATE `subcategory_3_level` SET `ss_category`= ? WHERE `ssc_id` = ?";
 				$result=$this->db->executeQuery($this->query,array($categoryname,$categoryid),"update");
 					if($result){
 						return true;

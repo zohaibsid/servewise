@@ -11,9 +11,9 @@ session_start();
 
 	
 	//print_r($olddetails);
-	$vbid = "1";
+	$categoryid = "1";
 	
-		$getcategory = $category->getcategorybyvbid($vbid);
+		$getcategory = $category->getcategorythreebyid($categoryid);
 	
 	
 	
