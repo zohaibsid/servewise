@@ -23,7 +23,11 @@
 				}
 		
 		
-		
+		function getallreviewsbyvbid($vbid){
+					$this->query="SELECT product.name,product.product_id,user.user_id,user.first_name,user.last_name,product_review.review,product.vb_id FROM product,user,product_review,vendor_branch WHERE product.product_id = product_review.product_id AND user.user_id = product_review.user_id AND product.vb_id = ? ";
+				$result=$this->db->executeQuery($this->query,array($vbid),"cread");
+				return $result;
+				}
 				function getpropertydata($user_id){
 					$this->query="select property_id,property_title,address,area,city,status,price,created_date from property where created_by=? ";
 				$result=$this->db->executeQuery($this->query,array($user_id),"cread");
