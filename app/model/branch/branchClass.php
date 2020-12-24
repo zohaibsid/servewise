@@ -1,7 +1,7 @@
 
 <?php 
 
-	class Vendor{
+	class Branch{
 		
 		private $query;
 		private $db;	
@@ -23,6 +23,17 @@
 		function getspecificbranchbyemail($email){
 				$this->query="select * from branch where email_id = ?";
 				$result=$this->db->executeQuery($this->query,array($email),"cread");
+				if($result){
+					return $result;
+					}    
+				    else{
+						return false;
+						}
+			}
+		
+		function getbranchesbyvendorid($vendorid){
+				$this->query="select * from branch where vendor_id = ?";
+				$result=$this->db->executeQuery($this->query,array($vendorid),"cread");
 				if($result){
 					return $result;
 					}    
