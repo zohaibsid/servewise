@@ -22,6 +22,12 @@
 						}
 				}
 		
+        	function deletecategory($categoryid){
+					$this->query="delete from category where category_id=?";
+					$result=$this->db->executeQuery($this->query,array($categoryid),"delete");
+					return $result;
+
+				}
 		
 		
 				function getcategorybyvbid($vbid){
@@ -32,7 +38,7 @@
 				
 				function updatecategorybyid($categoryname,$categoryid)
 {
-					$this->query="UPDATE `category` SET `name`=? WHERE `category_id`= ?";
+					$this->query="UPDATE `category` SET `name`= ? WHERE `category_id` = ?";
 				$result=$this->db->executeQuery($this->query,array($categoryname,$categoryid),"update");
 					if($result){
 						return true;
@@ -53,12 +59,7 @@
 					return $result;
 				}
         
-				function deleteproperty($property_id){
-					$this->query="delete from property where property_id=?";
-					$result=$this->db->executeQuery($this->query,array($property_id),"delete");
-					return $result;
-
-				}
+			
 				function deletefavproperty($property_id,$userid){
 					$this->query="delete from favorite_properties where property_id=? and user_id=?";
 					$result=$this->db->executeQuery($this->query,array($property_id,$userid),"delete");

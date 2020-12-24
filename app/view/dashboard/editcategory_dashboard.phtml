@@ -10,10 +10,16 @@
 			<div class="col-3 col-m-6 col-sm-6">
             <h1>Catagory</h1>
               <label>Category name :</label>
-                <form action="<?php echo $controller ?>" method="post" id="form">
-                <input name="categoryid" value="" type="text" value="<?php echo $_GET["id"]; ?>">
-                    <input name="category" value="" type="text" value="<?php echo $_GET["name"]; ?>">
-                <input type="button" name="addbtn" value="Update Category" onclick="submitForm()" >
+                <form action="<?php echo $controller ?>" method="post" >
+                <?php 
+                    
+                      $id = $_GET["id"];
+                      $name = $_GET["name"];
+                    
+                    ?>
+                    <input name="categoryid"  type="text" value="<?php echo $id; ?>" hidden>
+                    <input name="category"  type="text" value="<?php echo $name; ?>">
+                <input type="submit" name="addbtn" value="Update Category"  >
         </form>
                     </div>
             

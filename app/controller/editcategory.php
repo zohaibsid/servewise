@@ -11,8 +11,8 @@ require $config_service['CATEGORY_CLASS'];
 	
     $category=new Category();
 	$message=null;
-	$categoryid = $_POST["id"];
-	$categoryname = $_POST["name"];
+	$categoryid = $_POST["categoryid"];
+	$categoryname = $_POST["category"];
 	
 		if(isset($_POST["name"])){
 			
@@ -22,7 +22,7 @@ require $config_service['CATEGORY_CLASS'];
 								echo "1";
 							}
 							else{
-								echo "0"		
+								echo "0"	;	
                             }
 			
 		}
