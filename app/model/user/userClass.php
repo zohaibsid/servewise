@@ -99,7 +99,11 @@
 				}
 			
 			
-			
+			function getcustomersbyvbid($vbid){
+				$this->query="SELECT user.user_id,user.first_name,user.last_name,product.product_id,order_product.user_id,product.name FROM product,orders,order_product,user,vendor_branch WHERE product.vb_id = ? AND product.product_id = order_product.product_id AND user.user_id = order_product.user_id GROUP BY product.product_id ";
+				$result=$this->db->executeQuery($this->query,array($vbid),"cread");
+				return $result;	
+			}
 			
 			
 			
