@@ -8,7 +8,8 @@ $config_service = [
 	'ORDER_CLASS' => APPLICATION_INNERPATH   . DSINNER  . 'model' . DSINNER . 'order' . DSINNER . 'orderClass.php',
 	'PRODUCT_CLASS' => APPLICATION_INNERPATH   . DSINNER  . 'model' . DSINNER . 'product' . DSINNER . 'productClass.php',
 	'VENDOR_CLASS' => APPLICATION_INNERPATH   . DSINNER  . 'model' . DSINNER . 'vendor' . DSINNER . 'vendorClass.php',
-    'CATEGORY_CLASS' => APPLICATION_INNERPATH   . DSINNER  . 'model' . DSINNER . 'category' . DSINNER . 'categoryClass.php'
+    'CATEGORY_CLASS' => APPLICATION_INNERPATH   . DSINNER  . 'model' . DSINNER . 'category' . DSINNER . 'categoryClass.php',
+    'BRAND_CLASS' => APPLICATION_INNERPATH   . DSINNER  . 'model' . DSINNER . 'brand' . DSINNER . 'brandClass.php'
 ];
 
 
