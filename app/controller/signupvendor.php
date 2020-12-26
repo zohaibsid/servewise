@@ -21,21 +21,15 @@ require $config_service['VENDOR_CLASS'];
 	$emailid = $_POST["email"];
 		$address = $_POST["address"];
         $address2 = $_POST["address2"];
-        $city = $_POST["city"];
-        $state = $_POST["state"];
-        $zip = $_POST["zip"];
-        $country = $_POST["country"];
-		$userid = "6";
+		$userid = 6;
 	
 	
 	
-		$becomevendor = $vendor->SignUpasVendor($name,$contactno,$emailid,$address,$address2,$city,$state,$zip,$country,userid);
+		$becomevendor = $vendor->SignUpasVendor($name,$contactno,$emailid,$address,$address2,$userid);
 		if (!empty($becomevendor)){
-			$message[0] = true;
-			$message[1] = "Updated Successfully";	
+			echo "1";	
 		} else {
-			$message[0] = false;
-			$message[1] = "User Record Not Updated";
+			echo "0";
 		}
 	
 	}

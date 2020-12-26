@@ -7,10 +7,8 @@
 				<div class="container-content">
 					
                     <div class="user-profile-dis">
-                        <div class="user-image">
-                          
-                        </div>
-                    <form action="<?php echo $controller ?>" method="post" >
+                        
+                    <form action="<?php echo $controller ?>" method="post" id="form">
 						<div class="user-detail1">
                             <label>Name.</label>
                             <input name="name" type="text" >
@@ -25,19 +23,12 @@
                             <input name="address" type="text" >
                             <label>Address2.</label>
                             <input name="address2" type="text" >
-                            <label>City.</label>
-                           <input name="city" type="text" >
-                            <label>State.</label>
-                           <input name="state" type="text" >
-                            <label>Zip Code.</label>
-                            <input name="zip" type="text" >
-                            <label>Country.</label>
-                           <input name="country" type="text" >
+                           
 							
                         </div >
 						
 						<div class="user-detail1">
-							<input type="submit" name="signupbtn" value="Request" >
+							<input type="button" name="signupbtn" value="Request" onclick="submitForm()">
 						</div>
 						</form>
                     </div>
@@ -54,7 +45,7 @@
     var formData = $('#form').serializeArray();
     $.post(url, formData).done(function (data) {
         if(data == 1){
-      alert('success');
+      alert('added');
     }else{
       alert('error');
     }

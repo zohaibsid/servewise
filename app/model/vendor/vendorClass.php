@@ -10,9 +10,9 @@
 				$this->db=new databaseManager();
 			}
 			//signup method of vendor..
-			function SignUpasVendor($name,$contactno,$emailid,$address,$address2,$city,$state,$zip,$country,$userid){
-					$this->query="insert into vendor(name,contact_no,email_id,address,address_2,country,state,city,zip,user_id,created_date) values(?,?,?,?,?,?,?,?,?,?,CURRENT_DATE())";
-				$result=$this->db->executeQuery($this->query,array($name,$contactno,$emailid,$address,$address2,$city,$state,$zip,$country,$userid),"create");
+			function SignUpasVendor($name,$contactno,$emailid,$address,$address2,$userid){
+					$this->query="insert into vendor(name,contact_no,email_id,address,address_2,user_id,created_date) values(?,?,?,?,?,?,CURRENT_DATE())";
+				$result=$this->db->executeQuery($this->query,array($name,$contactno,$emailid,$address,$address2,$userid),"create");
 					if($result){
 						return true;
 						}    
