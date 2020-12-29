@@ -23,8 +23,43 @@
                             <input name="address" type="text" >
                             <label>Address2.</label>
                             <input name="address2" type="text" >
-                           
-							
+                            
+					<div class="frmDronpDown">
+        <div class="row">
+            <label>Country:</label><br /> <select name="country"
+                id="country-list" 
+                onChange="getState(this.value);">
+                <option value disabled selected>Select Country</option>
+<?php
+foreach ($getcountries as $country) {
+    ?>
+<option value="<?php echo $country["id"]; ?>"><?php echo $country["name"]; ?></option>
+<?php
+}
+?>
+</select>
+        </div>
+        <div class="row">
+            <label>State:</label><br /> <select name="state"
+                id="state-list" 
+                onChange="getCity(this.value);">
+                <option value="">Select State</option>
+            <?php
+foreach ($getstates as $state) {
+    ?>
+<option value="<?php echo $state["id"]; ?>"><?php echo $state["name"]; ?></option>
+<?php
+}
+?>
+            </select>
+        </div>
+        <div class="row">
+            <label>City:</label><br /> <select name="city"
+                id="city-list" >
+                <option>Select City</option>
+            </select>
+        </div>
+    </div>		
                         </div >
 						
 						<div class="user-detail1">
@@ -50,5 +85,35 @@
       alert('error');
     }
     });
+}
+function getState(val) {
+	$.ajax({
+		type: "POST",
+		url: "../model/signupvendor.php",
+		data:'country_id='+val,
+		beforeSend: function() {
+			$("#state-list").addClass("loader");
+		},
+		success: function(data){
+			$("#state-list").html(data);
+			$('#city-list').find('option[value]').remove();
+			$("#state-list").removeClass("loader");
+		}
+	});
+}
+
+function getCity(val) {
+	$.ajax({
+		type: "POST",
+		url: "???????",
+		data:'state_id='+val,
+		beforeSend: function() {
+			$("#city-list").addClass("loader");
+		},
+		success: function(data){
+			$("#city-list").html(data);
+			$("#city-list").removeClass("loader");
+		}
+	});
 }
 </script> 

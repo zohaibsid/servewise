@@ -15,6 +15,7 @@ $config = [
 'JQUREY_PATH' => '../app/view/js/jqurey.js',
 'JS_PATH' => '../app/view/js/core.js',
 'JS_PATH_DASHBOARD' => '../app/view/dashboard/js/core.js',
+'AJAX_HANDLER_DASHBOARD' => '../app/view/dashboard/js/ajax-handler.js',
 'AOSJS_PATH' => '../app/view/js/aos.js',
 'IMAGE_PATH'=> '../app/view/img/',
 'FONTAWESOME_PATH' => '../app/view/css/font-awesome/css/font-awesome.css',

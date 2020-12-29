@@ -34,6 +34,7 @@ $fonts = $config['FONTS_PATH'];
 $fontawsome = $config['FONTAWSOME'];
 $jscript = $config['JS_PATH'];
 $jscript_dashboard = $config['JS_PATH_DASHBOARD'];
+$ajax_handler = $config['AJAX_HANDLER_DASHBOARD'];
 $dashboardcss = $config['DASHBOARD_PATH'];
 $jqurey = $config['JQUREY_PATH'];
 $aosjs = $config['AOSJS_PATH'];

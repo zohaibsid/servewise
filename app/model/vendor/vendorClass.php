@@ -55,6 +55,38 @@
 						return false;
 						}
 			}
+        
+        	function getallcountries(){
+				$this->query="select * from countries ";
+				$result=$this->db->executeQuery($this->query,array(),"sread");
+				if($result){
+					return $result;
+					}    
+				    else{
+						return false;
+						}
+			}
+        	function getstatebycountryid($countryid){
+				$this->query="select * from states where country_id=?";
+				$result=$this->db->executeQuery($this->query,array($countryid),"cread");
+				if($result){
+					return $result;
+					}    
+				    else{
+						return false;
+						}
+			}
+        function getcitybystateid($stateid){
+				$this->query="select * from cities where state_id=?";
+				$result=$this->db->executeQuery($this->query,array($stateid),"cread");
+				if($result){
+					return $result;
+					}    
+				    else{
+						return false;
+						}
+			}
+			
 			function getuserpic($emailid){
 				$this->query="select picture_path from user where email_id=?";
 				$result=$this->db->executeQuery($this->query,array($emailid),"cread");
