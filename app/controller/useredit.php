@@ -35,14 +35,10 @@ require $config_service['USER_CLASS'];
 		$updatedetails = $user->updateuserdetails($fname,$lname,$contactno,$address,$address2,$city,$state,$zip,$country,$emailid);
 		if (!empty($updatedetails)){
 			echo "1";
-            $message[0] = true;
-			$message[1] = "Updated Successfully";	
-			//echo "Successfully Updated";
-				header("location: ../View/userprofile.php");
+          
 		} else {
 			echo "0";
-            $message[0] = false;
-			$message[1] = "User Record Not Updated";
+            
 		}
 	
 	}

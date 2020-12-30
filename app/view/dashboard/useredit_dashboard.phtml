@@ -8,15 +8,13 @@
                     <div class="user-content-upper"></div>
                     <div class="user-content-dis">
                         <div class="container-content">
-                            <form action="<?php $controller; ?>" method="POST" id="form">
+                            <form action="<?php echo $controller; ?>" method="POST" id="form">
                             <div class="user-profile-upper">
-                                 <input type="button" class="editbtn1" name="updatebtn" onclick="submitForm()"  />
+                                 <input type="button" class="editbtn1" name="updatebtn" value="update" onclick="submitForm()"  />
                                 <a class="editbtn2" href="?page=userprofile_dashboard">Cancel</a>
                             </div>
                             <div class="user-profile-dis">
-                                <div class="user-image">
-                                    <input type="file">
-                                </div>
+                               
                                 <div class="user-detail1">
                                     <label>First Name.</label>
                                     <input type="text" name="fname" value="<?php if(isset($olddetails)){echo $olddetails[0]['first_name']; } ?>">
