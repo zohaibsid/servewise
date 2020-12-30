@@ -10,9 +10,9 @@
 				$this->db=new databaseManager();
 			}
 			//signup method of vendor..
-			function SignUpasVendor($name,$contactno,$emailid,$address,$address2,$userid){
-					$this->query="insert into vendor(name,contact_no,email_id,address,address_2,user_id,created_date) values(?,?,?,?,?,?,CURRENT_DATE())";
-				$result=$this->db->executeQuery($this->query,array($name,$contactno,$emailid,$address,$address2,$userid),"create");
+			function SignUpasVendor($name,$contactno,$emailid,$address,$address2,$country,$state,$city,$userid){
+					$this->query="insert into vendor(name,contact_no,email_id,address,address_2,country,state,city,user_id,created_date) values(?,?,?,?,?,?,?,?,?,CURRENT_DATE())";
+				$result=$this->db->executeQuery($this->query,array($name,$contactno,$emailid,$address,$address2,$country,$state,$city,$userid),"create");
 					if($result){
 						return true;
 						}    
@@ -44,7 +44,17 @@
 						}
 					
 			}
-		
+		function getvendordetailsbyuserid($userid){
+				$this->query="select * from vendor where user_id=?";
+				$result=$this->db->executeQuery($this->query,array($userid),"cread");
+				if($result){
+					return $result;
+					}    
+				    else{
+						return false;
+						}
+			}
+        
 			function getuserdetails($emailid){
 				$this->query="select * from user where email_id=?";
 				$result=$this->db->executeQuery($this->query,array($emailid),"cread");
@@ -59,6 +69,36 @@
         	function getallcountries(){
 				$this->query="select * from countries ";
 				$result=$this->db->executeQuery($this->query,array(),"sread");
+				if($result){
+					return $result;
+					}    
+				    else{
+						return false;
+						}
+			}
+        function getcountrynamebyid($countryid){
+				$this->query="select (name) from countries where id = ? ";
+				$result=$this->db->executeQuery($this->query,array($countryid),"cread");
+				if($result){
+					return $result;
+					}    
+				    else{
+						return false;
+						}
+			}
+         function getstatenamebyid($stateid){
+				$this->query="select (name) from states where id = ? ";
+				$result=$this->db->executeQuery($this->query,array($stateid),"cread");
+				if($result){
+					return $result;
+					}    
+				    else{
+						return false;
+						}
+			}
+         function getcitynamebyid($cityid){
+				$this->query="select (name) from cities where id = ? ";
+				$result=$this->db->executeQuery($this->query,array($cityid),"cread");
 				if($result){
 					return $result;
 					}    

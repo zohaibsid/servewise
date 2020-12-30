@@ -11,7 +11,7 @@
 			}
 			//signup method of branch..
 			function requestbranch($name,$contactno,$emailid,$address,$address2,$userid,$vendorid){
-					$this->query="insert into vendor(name,contact_no,email_id,address,address_2,user_id,vendor_id,created_date) values(?,?,?,?,?,?,?,CURRENT_DATE())";
+					$this->query="insert into branch(name,contact_no,email_id,address,address_2,user_id,vendor_id,created_date) values(?,?,?,?,?,?,?,CURRENT_DATE())";
 				$result=$this->db->executeQuery($this->query,array($name,$contactno,$emailid,$address,$address2,$userid,$vendorid),"create");
 					if($result){
 						return true;
@@ -43,7 +43,7 @@
 			}
 		//adding country to subbranch.
 		function addcountrytosubbranch($branchid,$country){
-					$this->query="insert into subbranch_country(country,branch_id,created_date) values(?,?,CURRENT_DATE())";
+					$this->query="insert into subbranch_country(branch_id,country,created_date) values(?,?,CURRENT_DATE())";
 				$result=$this->db->executeQuery($this->query,array($branchid,$country),"create");
 					if($result){
 						return true;
@@ -54,7 +54,7 @@
 				}
 		function getspecificsubbranchcountry($branchid){
 				$this->query="select * from subbranch_country where branch_id = ? ";
-				$result=$this->db->executeQuery($this->query,array($branchid),"sread");
+				$result=$this->db->executeQuery($this->query,array($branchid),"cread");
 				if($result){
 					return $result;
 					}    
@@ -76,7 +76,68 @@
 				}
 		function getspecificsubbranchstate($branchid){
 				$this->query="select * from subbranch_state where branch_id = ? ";
-				$result=$this->db->executeQuery($this->query,array($branchid),"sread");
+				$result=$this->db->executeQuery($this->query,array($branchid),"cread");
+				if($result){
+					return $result;
+					}    
+				    else{
+						return false;
+						}
+			}
+        
+        	function getallcountries(){
+				$this->query="select * from countries ";
+				$result=$this->db->executeQuery($this->query,array(),"sread");
+				if($result){
+					return $result;
+					}    
+				    else{
+						return false;
+						}
+			}
+        function getcountrynamebyid($countryid){
+				$this->query="select (name) from countries where id = ? ";
+				$result=$this->db->executeQuery($this->query,array($countryid),"cread");
+				if($result){
+					return $result;
+					}    
+				    else{
+						return false;
+						}
+			}
+         function getstatenamebyid($stateid){
+				$this->query="select (name) from states where id = ? ";
+				$result=$this->db->executeQuery($this->query,array($stateid),"cread");
+				if($result){
+					return $result;
+					}    
+				    else{
+						return false;
+						}
+			}
+         function getcitynamebyid($cityid){
+				$this->query="select (name) from cities where id = ? ";
+				$result=$this->db->executeQuery($this->query,array($cityid),"cread");
+				if($result){
+					return $result;
+					}    
+				    else{
+						return false;
+						}
+			}
+        	function getstatebycountryid($countryid){
+				$this->query="select * from states where country_id=?";
+				$result=$this->db->executeQuery($this->query,array($countryid),"cread");
+				if($result){
+					return $result;
+					}    
+				    else{
+						return false;
+						}
+			}
+        function getcitybystateid($stateid){
+				$this->query="select * from cities where state_id=?";
+				$result=$this->db->executeQuery($this->query,array($stateid),"cread");
 				if($result){
 					return $result;
 					}    

@@ -33,7 +33,7 @@
 <?php
 foreach ($getcountries as $country) {
     ?>
-<option value="<?php echo $country["id"]; ?>"><?php echo $country["name"]; ?></option>
+<option value="<?php echo $country["id"]; ?>" ><?php echo $country["name"]; ?></option>
 <?php
 }
 ?>
@@ -44,13 +44,7 @@ foreach ($getcountries as $country) {
                 id="state-list" 
                 onChange="getCity(this.value);">
                 <option value="">Select State</option>
-            <?php
-foreach ($getstates as $state) {
-    ?>
-<option value="<?php echo $state["id"]; ?>"><?php echo $state["name"]; ?></option>
-<?php
-}
-?>
+          
             </select>
         </div>
         <div class="row">
@@ -86,34 +80,5 @@ foreach ($getstates as $state) {
     }
     });
 }
-function getState(val) {
-	$.ajax({
-		type: "POST",
-		url: "../model/signupvendor.php",
-		data:'country_id='+val,
-		beforeSend: function() {
-			$("#state-list").addClass("loader");
-		},
-		success: function(data){
-			$("#state-list").html(data);
-			$('#city-list').find('option[value]').remove();
-			$("#state-list").removeClass("loader");
-		}
-	});
-}
 
-function getCity(val) {
-	$.ajax({
-		type: "POST",
-		url: "???????",
-		data:'state_id='+val,
-		beforeSend: function() {
-			$("#city-list").addClass("loader");
-		},
-		success: function(data){
-			$("#city-list").html(data);
-			$("#city-list").removeClass("loader");
-		}
-	});
-}
 </script> 

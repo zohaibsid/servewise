@@ -21,11 +21,20 @@ require $config_service['VENDOR_CLASS'];
 	$emailid = $_POST["email"];
 		$address = $_POST["address"];
         $address2 = $_POST["address2"];
+        $countryid = $_POST["country"];
+        $stateid = $_POST["state"];
+        $cityid = $_POST["city"];
 		$userid = $_SESSION['logInId'];
 	
+        $getcountryname = $vendor->getcountrynamebyid($countryid);
+        $getstatename = $vendor->getstatenamebyid($stateid);
+        $getcityname = $vendor->getcitynamebyid($cityid);
+        $country = $getcountryname[0]["name"];
+        $state = $getstatename[0]["name"];
+        $city = $getcityname[0]["name"];
 	
 	
-		$becomevendor = $vendor->SignUpasVendor($name,$contactno,$emailid,$address,$address2,$userid);
+		$becomevendor = $vendor->SignUpasVendor($name,$contactno,$emailid,$address,$address2,$country,$state,$city,$userid);
 		if (!empty($becomevendor)){
 			echo "1";	
 		} else {
@@ -33,6 +42,9 @@ require $config_service['VENDOR_CLASS'];
 		}
 	
 	}
-
+        $userid = $_SESSION["logInId"];
+        $getvendorid = $vendor->getvendordetailsbyuserid($userid);
+        $_SESSION['vendorid'] = $getvendorid[0]["vendor_id"];
+        
 
 ?>
