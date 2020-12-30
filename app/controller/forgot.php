@@ -12,23 +12,23 @@ require $config_service['USER_CLASS'];
 	$user=new User();
 	$message=null;
 	
-	if(isset($_POST["sendbtn"])){
+	if(isset($_POST["email"])){
 	$emailid = $_POST["email"];
 	$password = $user->getSpecificUserPassword($emailid);
 	if (!empty($password)){
-		$actualpassword = $password[0]["password"];
+		//$actualpassword = $password[0]["password"];
 		//mail password
-		$to = $emailid;
-		$subject = "ServeWise Password";
-		$txt = "Your Password for ServeWise is ". $actualpassword. "\n This is your password to enjoy our services.";
-		$headers .= 'From: <noreply@servewise.com>' . "\r\n";
-		mail($to,$subject,$txt,$headers);
+		//$to = $emailid;
+		//$subject = "ServeWise Password";
+		//$txt = "Your Password for ServeWise is ". $actualpassword. "\n This is your password to enjoy our services.";
+		//$headers .= 'From: <noreply@servewise.com>' . "\r\n";
+		//mail($to,$subject,$txt,$headers);
 		// end
-		$message[0] = True;
-		$message[1] = "Password is sent to your Email ID.";  
+		echo "1";
+          
 	} else {
-		$message[0] = False;
-		$message[1] = "No user found against this Email ID.";
+		echo "0";
+       
 	}
 	}
 ?>

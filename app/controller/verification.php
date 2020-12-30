@@ -30,25 +30,20 @@ require $config_service['USER_CLASS'];
 	
 			if ($security==$securitycode){
 				$status = "active";
-				$status = $user->updateUserStatus($status,$emailid);
-				if (!empty($status)){
-				$message[0] = true;
-			$message[1] = "Sign Up Validation is Successful, You can log in now.";
-			echo "<script> window.location.href='../View/login.php' </script> ";
+				$statuses = $user->updateUserStatus($status,$emailid);
+				if (!empty($statuses)){
+				echo "1";
 				} else {
-				$message[0] = false;
-			$message[1] = "Sign Up Validation Failed";
+				echo "0";
 				}
 			} else {
-				$message[0] = false;
-			$message[1] = "Security code is invalid";
+				echo "2";
 			}
 		} else {
-			$message[0] = false;
-			$message[1] = "Sign Up Failed";
-		}
+			echo "3";	
+        }
 	
 	}
-	$message[2] = "Verification code has been sent to your email id, kindly check your email.";
+	
 		
 ?>

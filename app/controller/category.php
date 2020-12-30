@@ -32,7 +32,7 @@ if (!empty($deleted)){
 	if(isset($_POST["category"])){
 	
 	$categoryname = $_POST["category"];
-    $createdby = "6";    
+    $createdby = $_SESSION['logInId'];    
 	
 	$vbid = "1";
 	

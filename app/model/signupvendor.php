@@ -17,7 +17,11 @@ session_start();
         
         $getcities = $vendor->getcitybystateid($stateid);
 
-
+if (isset($_POST["country_id"])){
+        
+        $getstates = $vendor->getstatebycountryid($countryid);
+}
+	
 	
 
 ?>

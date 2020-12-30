@@ -3,7 +3,23 @@
 			<div class="col-3 col-m-6 col-sm-6">
 
             <h1>Add New Product</h1>
-                
+                <form action="<?php echo $controller; ?>" method="post" enctype="multipart/form-data">
+    <table width="100%">
+        <tr>
+            <td>Select Photo (one or multiple):</td>
+            <td><input type="file" name="files[]" multiple/></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">Note: Supported image format: .jpeg, .jpg, .png, .gif</td>
+        </tr>
+        
+    </table>
+               <input name="name" type="text" value="" />
+                    <input name="description" type="text" value="" />
+                    <input name="quantity" type="number" value="" />
+                    <input name="price" type="number" value="" />
+                    <input type="submit" value="Add Product" name="add" id="selectedButton"/>
+                </form>
         </div>
 </div>
 </div>

@@ -37,7 +37,7 @@
             
           </form>
           
-                   
+            
     </div>
     </div>
 
@@ -49,9 +49,11 @@
     var formData = $('#form').serializeArray();
     $.post(url, formData).done(function (data) {
         if(data == 1){
-      alert('success');
-    }else{
-      alert('error');
+       window.location.replace("?page=verification_dashboard");
+    }else if (data== 0){
+      alert('sign up failed');
+    } else {
+        alert("email already registered");
     }
     });
 }

@@ -27,7 +27,7 @@ require $config_service['BRANCH_CLASS'];
 		$address = $_POST["address"];
         $address2 = $_POST["address2"];
       
-		$userid = "6";
+		$userid = $_SESSION['logInId'];
 	
 	
 	

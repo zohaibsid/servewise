@@ -10,10 +10,10 @@
 				$this->db=new databaseManager();
 			}
 			
-			function addnewproduct($ptitle,$pstatus,$ptype,$commercial_type,$pprice,$parea,$proom,$pbath,$paddress,$pcity,$pinfo,$page,$pparking,$plawn,$paircondition,$ppool,$plift,$ppets,$pmaid,$pstudy,$psecurity,$pwardrobe,$pbalcony,$pgym,$pspa,$psteam,$pplayarea,$psquash,$pcinema,$pkitchen,$videolink,$contactname,$contactemail,$contactno)
+			function addnewproduct()
 {
-					$this->query="insert into property(property_title,status,type,commercial_type,price,area,address,city,detailed_information,building_age,bedroom,bathroom,free_parking,air_condition,places_to_seat,swimming_pool,maid_room,lift,security,gym,spa,steam_bath,balcony,play_area,squash_court,cinema,pets_allowed,study_room,wardrobe,kitchen_appliances,video_link,contact_name,contact_email,is_verified,verified_by,contact_no,created_by,created_date) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,CURRENT_DATE())";
-				$result=$this->db->executeQuery($this->query,array($ptitle,$pstatus,$ptype,$commercial_type,$pprice,$parea,$paddress,$pcity,$pinfo,$page,$proom,$pbath,$pparking,$paircondition,$plawn,$ppool,$pmaid,$plift,$psecurity,$pgym,$pspa,$psteam,$pbalcony,$pplayarea,$psquash,$pcinema,$ppets,$pstudy,$pwardrobe,$pkitchen,$videolink,$contactname,$contactemail,0,0,$contactno, $_SESSION['logInId']),"create");
+					$this->query="insert into property() values()";
+				$result=$this->db->executeQuery($this->query,array(),"create");
 					if($result){
 						return $result;
 						}    

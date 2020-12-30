@@ -19,7 +19,7 @@ require $config_service['BRAND_CLASS'];
 	if(isset($_POST["name"])){
 	
 	$name = $_POST["name"];
-    $userid = "6";    
+    $userid = $_SESSION['logInId'];    
 	
 	
 	

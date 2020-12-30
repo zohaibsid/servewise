@@ -21,6 +21,7 @@ $user=new User();
 	$security_code = mt_rand(1000,9999);
 	$_SESSION["email"]=$email;
         	$status = "block";
+        $_SESSION["securitycode"] = $security_code;
    
 	
     
@@ -50,23 +51,17 @@ mail($to,$subject,$txt,$headers);
 		$checkuser= $user->CheckUser($email);
 		
 		if (empty($checkuser)){
-		    if ($password==$cpassword){
+		   
 		$signup = $user->newSignUp($email,$password,$security_code,$status);        
-		    }else{
-		    $message[0] = false;
-			$message[1] = "Password Couldn't match.";    
-		    }
-		
+		   
 		if (!empty($signup)){
-			echo "<script>window.location.href='../View/varification.php?id=".$_SESSION["email"]."'</script> ";
+			echo "1";
 			
 		} else {
-			$message[0] = false;
-			$message[1] = "Sign Up Failed";
+			echo "0";
 		}	
 		} else {
-		$message[0] = false;
-			$message[1] = "Emaild id is already register";
+		 echo "2";
 		}
 		
         

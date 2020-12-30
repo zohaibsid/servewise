@@ -1,28 +1,4 @@
-<?php
-	//ini_set('display_errors', 1);
-//ini_set('display_startup_errors', 1);
-//error_reporting(E_ALL);	
-//session_start();
-//require ('../model/user/userClass.php');
-//require ('../model/classDatabaseManager.php');
-//if(!isset($_SESSION["email"])){
-				//echo "<script>window.location.href='login.php';</script>";
 
-//}
-// require APPLICATION_PATH . DS . 'model' . DS  . 'user' . DS . 'userClass.php';
-// require APPLICATION_PATH . DS . 'model' . DS  . 'classDatabaseManager.php';
-
-	$login=new User();
-if(isset($_SESSION["logIn"])){
-$emailid= $_SESSION["logIn"];
-}else{
-	$emailid = NULL;
-}
-$olddetails = $login->getuserdetails($emailid);
-
-?>
-
-	<!-- end navbar -->
 	<!-- main content -->
 	<?php require $footer;?>		
 	<div class="wrapper">
@@ -32,10 +8,10 @@ $olddetails = $login->getuserdetails($emailid);
                     <div class="user-content-upper"></div>
                     <div class="user-content-dis">
                         <div class="container-content">
-                            <form action="../Controller/userupdate.php" method="POST">
+                            <form action="<?php $controller; ?>" method="POST" id="form">
                             <div class="user-profile-upper">
-                                 <input type="submit" class="editbtn1" name="updatebtn" value="Update" />
-                                <a class="editbtn2" href="../View/userprofile.php">Cancel</a>
+                                 <input type="button" class="editbtn1" name="updatebtn" onclick="submitForm()"  />
+                                <a class="editbtn2" href="?page=userprofile_dashboard">Cancel</a>
                             </div>
                             <div class="user-profile-dis">
                                 <div class="user-image">
@@ -74,3 +50,19 @@ $olddetails = $login->getuserdetails($emailid);
 		</div>
 	</div>
 	<!-- end main content -->
+<script>
+	function submitForm(form){
+		
+    var url = $('#form').attr("action");
+		
+    var formData = $('#form').serializeArray();
+    $.post(url, formData).done(function (data) {
+        if(data == 1){
+			alert("Updated Successfully");        
+            window.location.replace("?page=userprofile_dashboard");
+		}else if (data == 0){
+			alert('User Record Not Updated');
+		}
+    });
+}
+</script>

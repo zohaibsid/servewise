@@ -14,7 +14,7 @@ require $config_service['ORDER_CLASS'];
 
 	$order = new Order();
 
-$userid = 6;
+$userid = $_SESSION['logInId'];
 
 $orderhistory = $order->getorderhistorybyuser($userid);
 

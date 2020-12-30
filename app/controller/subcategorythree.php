@@ -33,7 +33,7 @@ if (!empty($deleted)){
 	
 	$categoryid = $_POST["categoryid"];
 		$categoryname = $_POST["category"];
-    $createdby = "6";    
+    $createdby = $_SESSION['logInId'];    
 	
 	
 		$addedcategory = $category->addnewsubcategorythree($categoryid,$categoryname,$createdby);

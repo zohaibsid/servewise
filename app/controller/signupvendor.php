@@ -21,7 +21,7 @@ require $config_service['VENDOR_CLASS'];
 	$emailid = $_POST["email"];
 		$address = $_POST["address"];
         $address2 = $_POST["address2"];
-		$userid = 6;
+		$userid = $_SESSION['logInId'];
 	
 	
 	
@@ -33,10 +33,6 @@ require $config_service['VENDOR_CLASS'];
 		}
 	
 	}
-if (isset($_POST["country_id"])){
-        
-        $getstates = $vendor->getstatebycountryid($countryid);
-}
-	
+
 
 ?>
