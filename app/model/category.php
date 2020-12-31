@@ -11,7 +11,7 @@ session_start();
 
 	
 	//print_r($olddetails);
-	$vbid = "1";
+	$vbid = $_SESSION['vbid'];
 	
 		$getcategory = $category->getcategorybyvbid($vbid);
 	

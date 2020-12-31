@@ -5,7 +5,7 @@
 		<div class="row">
 			<div class="col-12 col-m-12 col-sm-12">
 				<div class="container-content">
-					<form action="<?php echo $controller ?>" method="post" >
+					<form action="<?php echo $controller ?>" method="post"  >
                     <div class="user-profile-dis">
                         <div class="user-image">
                           
@@ -71,7 +71,7 @@ foreach ($getcountries as $country) {
                         </div >
 						
 						<div class="user-detail1">
-							<input type="submit" name="signupbtn" value="Request" >
+							<input type="submit" name="signupbtn" value="Request"  >
 						</div>
 						
                     </div>
@@ -91,9 +91,9 @@ foreach ($getcountries as $country) {
     var formData = $('#form').serializeArray();
     $.post(url, formData).done(function (data) {
         if(data == 1){
-      alert('success');
+      alert('branch is created');
     }else{
-      alert('error');
+      alert('branch not created');
     }
     });
 }

@@ -10,10 +10,10 @@
 				$this->db=new databaseManager();
 			}
 			
-			function addnewproduct()
+			function addnewproduct($name,$description,$quantity,$price,$code,$category,$secondlevel,$thirdlevel,$vbid)
 {
-					$this->query="insert into property() values()";
-				$result=$this->db->executeQuery($this->query,array(),"create");
+					$this->query="insert into product(name,description,quantity,price,code,category_id,sc_id,ssc_id,vb_id) values(?,?,?,?,?,?,?,?,?)";
+				$result=$this->db->executeQuery($this->query,array($name,$description,$quantity,$price,$code,$category,$secondlevel,$thirdlevel,$vbid),"create");
 					if($result){
 						return $result;
 						}    
@@ -21,7 +21,91 @@
 						return false;
 						}
 				}
-		
+        
+       function insertimagesbyproductid($productid,$newFileName)
+{
+					$this->query="insert into images(product_id,image_path) values(?,?)";
+				$result=$this->db->executeQuery($this->query,array($productid,$newFileName),"create");
+					if($result){
+						return $result;
+						}    
+				    else{
+						return false;
+						}
+				}
+            function  getproductidbycode($code){
+				$this->query="select product_id from product where code = ? ";
+				$result=$this->db->executeQuery($this->query,array($code),"cread");
+				if($result){
+					return $result;
+					}    
+				    else{
+						return false;
+						}
+			}
+		//getting categories
+        
+        function getallcategories($vbid){
+				$this->query="select * from category where vb_id = ? ";
+				$result=$this->db->executeQuery($this->query,array($vbid),"cread");
+				if($result){
+					return $result;
+					}    
+				    else{
+						return false;
+						}
+			}
+        function getcountrynamebyid($countryid){
+				$this->query="select (name) from countries where id = ? ";
+				$result=$this->db->executeQuery($this->query,array($countryid),"cread");
+				if($result){
+					return $result;
+					}    
+				    else{
+						return false;
+						}
+			}
+         function getstatenamebyid($stateid){
+				$this->query="select (name) from states where id = ? ";
+				$result=$this->db->executeQuery($this->query,array($stateid),"cread");
+				if($result){
+					return $result;
+					}    
+				    else{
+						return false;
+						}
+			}
+         function getcitynamebyid($cityid){
+				$this->query="select (name) from cities where id = ? ";
+				$result=$this->db->executeQuery($this->query,array($cityid),"cread");
+				if($result){
+					return $result;
+					}    
+				    else{
+						return false;
+						}
+			}
+        	function getsecondlevelbycategoryid($categoryid){
+				$this->query="select * from subcategory_2_level where category_id=?";
+				$result=$this->db->executeQuery($this->query,array($categoryid),"cread");
+				if($result){
+					return $result;
+					}    
+				    else{
+						return false;
+						}
+			}
+        function getthirdlevelbysecondlevelid($scid){
+				$this->query="select * from subcategory_3_level where sc_id=?";
+				$result=$this->db->executeQuery($this->query,array($scid),"cread");
+				if($result){
+					return $result;
+					}    
+				    else{
+						return false;
+						}
+			}
+        //
 		
 		function getallreviewsbyvbid($vbid){
 					$this->query="SELECT product.name,product.product_id,user.user_id,user.first_name,user.last_name,product_review.review,product.vb_id FROM product,user,product_review,vendor_branch WHERE product.product_id = product_review.product_id AND user.user_id = product_review.user_id AND product.vb_id = ? ";

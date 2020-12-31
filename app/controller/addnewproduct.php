@@ -26,26 +26,20 @@ $randomstring = generateRandomString();
         $description = $_POST["description"];
         $quantity = $_POST["quantity"];
         $price = $_POST["price"];
-        $code = $name.
-    $userid = "6";    
+        $code = $name.$randomstring;
+        $category = $_POST["category"];
+        $secondlevel = $_POST["secondlevel"];
+        $thirdlevel = $_POST["thirdlevel"];
+       $vbid = $_SESSION['vbid'];
 	
+	//echo $vbid;
 	
-	
-		$addedbrand = $brand->addnewbrand($name,$userid);
-		if (empty($addedbrand)){
-			//$message[0] = true;
-			//$message[1] = "Updated Successfully";	
-			//echo "Successfully Updated";
-				//header("location: ../View/userprofile.php");
-		echo "0";
-        } else {
-			echo "1";		
-        }
-	
-	}
-
-
-foreach($_FILES["files"]["tmp_name"] as $key=>$tmp_name) {
+		$addedproduct = $product->addnewproduct($name,$description,$quantity,$price,$code,$category,$secondlevel,$thirdlevel,$vbid);
+		if (!empty($addedproduct)){
+			$getproductid = $product->getproductidbycode($code);
+                $productid = $getproductid[0]["product_id"];
+		//echo $productid;
+            foreach($_FILES["files"]["tmp_name"] as $key=>$tmp_name) {
     $file_name=$_FILES["files"]["name"][$key];
     $file_tmp=$_FILES["files"]["tmp_name"][$key];
     $ext=pathinfo($file_name,PATHINFO_EXTENSION);
@@ -57,12 +51,22 @@ foreach($_FILES["files"]["tmp_name"] as $key=>$tmp_name) {
             $newFileName=$randomstring.$filename.time().".".$ext;
             move_uploaded_file($file_tmp=$_FILES["files"]["tmp_name"][$key],"../photo_gallery/".$newFileName);
             echo $newFileName;
-        
+            $addimages = $product->insertimagesbyproductid($productid,$newFileName);
+          
     }
     else {
         array_push($error,"$file_name, ");
     }
 }
+
+            echo "0";
+        } else {
+			echo "1";		
+        }
+	
+	}
+
+
 function generateRandomString($length = 10) {
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $charactersLength = strlen($characters);

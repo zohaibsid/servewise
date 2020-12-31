@@ -2,16 +2,20 @@
 session_start();
 //echo $_SESSION["logIn"];
 //echo $_SESSION['logInName'];
+defined('APPLICATION_INNERPATH') || define('APPLICATION_INNERPATH', realpath( dirname(__FILE__) . '/../'));
 
- require("category/categoryClass.php");
- require($dbcalss);
+//echo 0;
+$PATH =  constant("APPLICATION_INNERPATH");
 
+require $PATH . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'service_config.php'; 
+require $config_service['DB_CLASS'];
+require $config_service['CATEGORY_CLASS'];
 	$category = new Category();
 	$message=null;
 
 	
 	//print_r($olddetails);
-	$categoryid = "1";
+	$categoryid = $_GET["id"];
 	
 		$getcategory = $category->getcategorythreebyid($categoryid);
 	

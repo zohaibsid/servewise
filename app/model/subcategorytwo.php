@@ -3,15 +3,23 @@ session_start();
 //echo $_SESSION["logIn"];
 //echo $_SESSION['logInName'];
 
- require("category/categoryClass.php");
- require($dbcalss);
+defined('APPLICATION_INNERPATH') || define('APPLICATION_INNERPATH', realpath( dirname(__FILE__) . '/../'));
+
+//echo 0;
+$PATH =  constant("APPLICATION_INNERPATH");
+
+require $PATH . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'service_config.php'; 
+require $config_service['DB_CLASS'];
+require $config_service['CATEGORY_CLASS'];
+ 
+ 
 
 	$category = new Category();
 	$message=null;
 
 	
 	//print_r($olddetails);
-	$categoryid = "2";
+	$categoryid =$_GET["id"] ;
 	
 		$getcategory = $category->getcategorybyid($categoryid);
 	

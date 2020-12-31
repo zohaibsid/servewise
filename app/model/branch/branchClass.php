@@ -20,6 +20,16 @@
 						return false;
 						}
 				}
+        function addvendorandbranch($vendorid,$branchid){
+					$this->query="insert into vendor_branch(vendor_id,branch_id) values(?,?)";
+				$result=$this->db->executeQuery($this->query,array($vendorid,$branchid),"create");
+					if($result){
+						return true;
+						}    
+				    else{
+						return false;
+						}
+				}
 		function getspecificbranchbyemail($email){
 				$this->query="select * from branch where email_id = ?";
 				$result=$this->db->executeQuery($this->query,array($email),"cread");
@@ -33,6 +43,16 @@
 		
 		function getbranchesbyvendorid($vendorid){
 				$this->query="select * from branch where vendor_id = ?";
+				$result=$this->db->executeQuery($this->query,array($vendorid),"cread");
+				if($result){
+					return $result;
+					}    
+				    else{
+						return false;
+						}
+			}
+        function getbranchevendorid($vendorid){
+				$this->query="select * from vendor_branch where vendor_id = ?";
 				$result=$this->db->executeQuery($this->query,array($vendorid),"cread");
 				if($result){
 					return $result;

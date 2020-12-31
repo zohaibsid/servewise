@@ -14,6 +14,7 @@
                 <?php 
                     
                       $id = $_GET["id"];
+                      
                     
                     ?>
                     <input name="categoryid"  type="text" value="<?php echo $id; ?>" hidden>
@@ -73,10 +74,10 @@
 		
     var formData = $('#form').serializeArray();
     $.post(url, formData).done(function (data) {
-        if(data == 1){
-			        alert('added');
+      if(data == 0){
+			        alert('sub category added');
 		}else{
-			alert('not added');
+			alert('sub category not added');
 		}
     });
 }

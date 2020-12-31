@@ -66,10 +66,10 @@
 		
     var formData = $('#form').serializeArray();
     $.post(url, formData).done(function (data) {
-        if(data == 1){
-			        alert('added');
+        if(data == 0){
+			        alert('category added');
 		}else{
-			alert('not added');
+			alert('category not added');
 		}
     });
 }
