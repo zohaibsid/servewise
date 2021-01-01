@@ -1,6 +1,4 @@
 
-  
-
 body{
     margin: 0;
     padding: 0px;
@@ -2118,6 +2116,38 @@ form {
   transform: scale(1);
 }
 /* resgistration-page end */
+
+/* dashboard-pages */
+
+/*add new product */
+.add-product{width: 100%;}
+.addproduct-form{width: 100%;}
+.product-table-data {display: flex;}
+.product-table{background: white;border-radius: 10px;box-shadow: 0px 3px 6px rgba(0,0,0,0.1); margin-bottom: 30px; margin-top: 20px;}
+.product-table-data .add-image{overflow:hidden;width: 150px;height: 200px;border: 1px solid black;border-style: dashed;border-radius: 10px;}  
+.product-table-data .add-image-box{width: 150px;height: 200px;overflow: hidden;border: 1px solid #a2a2a2;border-radius: 10px;margin-left: 10px;}  
+.product-table-data .add-image input[type="file"]{opacity: 0;width: 100%; height: 100%;}
+.product-table-data .add-image span{position: relative;top: -60%;left: -6px;}
+.add-product-dropdown{display: flex;justify-content: space-around;align-items: center;padding: 20px 0px;background: white;border-radius: 10px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);}
+.add-product-dropdown .row label{margin: 0px 10px;display: flex;justify-content: center;align-items: center;}
+.add-product-dropdown .row select{padding: 10px;border-style: dashed;border-radius: 5px;}
+.add-details{background: white;border-radius: 10px;padding: 10px;margin-top: 25px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);}
+.add-details .add-d-coulum{display: flex;margin: 10px 0px;}
+.add-details .add-d-coulum label{width: 190px;text-align: end;font-size: 24px;}
+.add-details .add-d-coulum input{border-bottom: 1px solid #c5c0c0;font-size: 24px;padding: 0px 10px;margin: 0px 20px;}
+.add-details .add-d-coulum .dis{width: 70%;}
+.add-details .add-d-coulum .count{width: 20%; border: 1px solid #c5c0c0;border-radius: 5px;font-size: 24px;border-style: dashed;}
+.add-details .add-btn{display: flex;justify-content: flex-end;padding: 20px;}
+.add-details .add-btn input{font-size: 14px; font-weight: 600; padding: 10px;border-radius: 5px;border: 1px solid black;background: white; transition: .3s ease;}
+.add-details .add-btn input:hover{background: rgb(51, 219, 51);border: 1px solid rgb(51, 219, 51);color: white; }
+.add-msg .warning{background: #fb5959;border-radius: 5px;padding: 20px; display: none;}
+.add-msg .success{background: #3aff3a;border-radius: 5px;padding: 20px; display: none;}
+.add-msg .fail{background: #fbff21;border-radius: 5px;padding: 20px; display: none;}
+
+/*add new product -end */
+/* dashboard-pages-end */
+
+
 
 /* meida res */
 @media(max-width:1200px){
