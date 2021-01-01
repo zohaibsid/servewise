@@ -1,6 +1,7 @@
 <?php
 defined('APPLICATION_PATH') || define('APPLICATION_PATH', realpath( dirname(__FILE__) . '/../app'));
 const DS = DIRECTORY_SEPARATOR; 
+$dbcalss = APPLICATION_PATH . DS . 'model' . DS . 'classDatabaseManager.php';
 require APPLICATION_PATH . DS . 'config' . DS . 'config.php';
 
 
@@ -19,8 +20,8 @@ if (strpos($page, 'dashboard') !== false) {
 	$dashboard = NULL;
 }
 
+$menu = getmenu('dta');
 
-$dbcalss = APPLICATION_PATH . DS . 'model' . DS . 'classDatabaseManager.php';
 $model = $config['MODEL_PATH'] . $path . '.php';
 $controller = $config['CONTROLLER_PATH'] . $path .  '.php';
 $GLOBALS['user_model']   = $config['MODEL_PATH'] .  'user/userClass.php';

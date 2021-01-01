@@ -4,7 +4,7 @@ session_start();
 //echo $_SESSION['logInName'];
 
  require("user/userClass.php");
- require($dbcalss);
+ require_once($dbcalss);
 
 	$customer = new User();
 	$message=null;
