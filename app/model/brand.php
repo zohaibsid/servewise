@@ -4,7 +4,7 @@ session_start();
 //echo $_SESSION['logInName'];
 
  require("brand/brandClass.php");
- require($dbcalss);
+ require_once($dbcalss);
 
 	$brand = new Brand();
 	$message=null;

@@ -4,7 +4,7 @@ session_start();
 //echo $_SESSION['logInName'];
 
  require("category/categoryClass.php");
- require($dbcalss);
+ require_once($dbcalss);
 
 	$category = new Category();
 	$message=null;
