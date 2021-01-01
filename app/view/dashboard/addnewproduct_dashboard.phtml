@@ -1,3 +1,7 @@
+<?php if (isset($_SESSION['vbid'])){
+	
+ 
+?>
 <div class="wrapper">
 		<div class="row">
 			<div class="add-product">
@@ -98,3 +102,7 @@ foreach ($getcategories as $category) {
     });
 }
 </script> 
+<?php } else {
+	echo "first create/request a branch";
+} 
+?>

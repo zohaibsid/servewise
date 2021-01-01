@@ -19,11 +19,11 @@ require $config_service['BRAND_CLASS'];
 	if(isset($_POST["name"])){
 	
 	$name = $_POST["name"];
-    $userid = $_SESSION['logInId'];    
+    $vendorid = $_SESSION['vendorid'];    
 	
 	
 	
-		$addedbrand = $brand->addnewbrand($name,$userid);
+		$addedbrand = $brand->addnewbrand($name,$vendorid);
 		if (empty($addedbrand)){
 			//$message[0] = true;
 			//$message[1] = "Updated Successfully";	

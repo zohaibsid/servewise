@@ -30,8 +30,9 @@ $randomstring = generateRandomString();
         $category = $_POST["category"];
         $secondlevel = $_POST["secondlevel"];
         $thirdlevel = $_POST["thirdlevel"];
-       $vbid = $_SESSION['vbid'];
-	
+       if (isset ($_SESSION['vbid'])){
+		$vbid = $_SESSION['vbid'];
+	  
 	//echo $vbid;
 	
 		$addedproduct = $product->addnewproduct($name,$description,$quantity,$price,$code,$category,$secondlevel,$thirdlevel,$vbid);
@@ -64,7 +65,10 @@ $randomstring = generateRandomString();
 			echo "1";		
         }
 	
-	}
+	} else {
+		   echo "branch not created";
+	   }
+		 } 
 
 
 function generateRandomString($length = 10) {

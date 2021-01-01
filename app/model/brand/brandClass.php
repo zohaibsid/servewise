@@ -12,7 +12,7 @@
 			
 			function addnewbrand($name,$userid)
 {
-					$this->query="insert into brand(name,user_id,created_date) values(?,?,CURRENT_DATE())";
+					$this->query="insert into brand(name,vendor_id) values(?,?)";
 				$result=$this->db->executeQuery($this->query,array($name,$userid),"create");
 					if($result){
 						return $result;
@@ -23,9 +23,9 @@
 				}
 		
 
-				function getallbrands(){
-					$this->query="select * from brand ";
-				$result=$this->db->executeQuery($this->query,array(),"sread");
+				function getallbrands($vendorid){
+					$this->query="select * from brand where vendor_id = ? ";
+				$result=$this->db->executeQuery($this->query,array($vendorid),"cread");
 				return $result;
 				}
 				
