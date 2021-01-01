@@ -19,7 +19,7 @@ require_once $config_service['DB_CLASS'];
 
 	$brand = new Brand();
 	$message=null;
-	$vendorid = 12;
+	$vendorid = $_SESSION['vendorid'];
 		$getbrand = $brand->getallbrands($vendorid);
 echo 'hello';
 	
