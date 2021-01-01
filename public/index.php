@@ -20,7 +20,7 @@ if (strpos($page, 'dashboard') !== false) {
 	$dashboard = NULL;
 }
 
-$menu = getmenu('dta');
+$menu = getmenu();
 
 $model = $config['MODEL_PATH'] . $path . '.php';
 $controller = $config['CONTROLLER_PATH'] . $path .  '.php';

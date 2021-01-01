@@ -1,8 +1,9 @@
 <?php  
 const DSINNER = DIRECTORY_SEPARATOR; 
 $config_service = [
-'DB_CLASS' =>  APPLICATION_INNERPATH  . DSINNER  . 'model'  . DSINNER  .  'classDatabaseManager.php',
-'USER_CLASS' => APPLICATION_INNERPATH   . DSINNER  . 'model' . DSINNER . 'user' . DSINNER . 'userClass.php',
+
+	'DB_CLASS' =>  APPLICATION_INNERPATH  . DSINNER  . 'model'  . DSINNER  .  'classDatabaseManager.php',
+	'USER_CLASS' => APPLICATION_INNERPATH   . DSINNER  . 'model' . DSINNER . 'user' . DSINNER . 'userClass.php',
 	'BRANCH_CLASS' => APPLICATION_INNERPATH   . DSINNER  . 'model' . DSINNER . 'branch' . DSINNER . 'branchClass.php',
 	'MENU_CLASS' => APPLICATION_INNERPATH   . DSINNER  . 'model' . DSINNER . 'menu' . DSINNER . 'menuClass.php',
 	'ORDER_CLASS' => APPLICATION_INNERPATH   . DSINNER  . 'model' . DSINNER . 'order' . DSINNER . 'orderClass.php',

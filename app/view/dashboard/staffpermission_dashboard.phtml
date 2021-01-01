@@ -1,8 +1,125 @@
+<?php 
+$menus  =  getmenu(); 
+if(isset($_POST['usertype']))
+{
+
+$type = $_POST['usertype']; 
+
+
+}else{
+
+
+$type = 1; 
+
+} 
+
+if(isset($_GET['error']))
+{
+
+echo 'error';
+
+}
+
+
+$usertypes = getusertypes();
+
+?>
 <div class="wrapper">
 		<div class="row">
 			<div class="col-3 col-m-6 col-sm-6">
       
-            <h1>Staff Permission</h1>
+            <h1>Permissions</h1>
+            <form action="#"  method="POST">
+            <select onchange="this.form.submit()" name='usertype'>
+            	<?php
+
+
+            		foreach ($usertypes as $key => $value) {
+                                    if($type == $value['id']){
+
+                                          $selected = 'selected';
+
+                                    }else{
+
+                                           $selected = NULL;
+                                    }
+
+            			?>
+            				
+            					<option value="<?php echo $value['id'];?>" <?php echo $selected;?>  ><?php echo $value['title'];?></option>
+
+            				
+            			<?php
+            		} 
+            		?>
+				</select>
+
+                        </form>
+
+                        <form action="<?php echo $controller?>" method="post">   
+            		<?php
+
+
+
+            	foreach ($menus as $key => $value) {
+                        ECHO '<BR>';
+                              $from = 'menu_id ='.$value['menu_id'] ;
+                        $check = ispermissionallowed($type,$from);
+
+                        if(empty($check)){
+
+                              $check = NULL;
+                        }else{
+                              $check = 'CHECKED';
+
+                        }
+            		echo "<input type='checkbox' name='menu[".$value['menu_id']."]' ".$check."><B>". $value['title'] . "</B></input>";
+
+            		$submenu = getsubmenu($value['menu_id']);
+            		if(!empty($submenu)){
+
+
+
+            			echo '<br>';
+
+
+            			foreach ($submenu as $key => $value) {
+                                    $from = 'submenu_id ='.$value['sm_id'] ;
+                                            $check = ispermissionallowed($type,$from);
+
+                        if(empty($check)){
+
+                              $check = NULL;
+                        }else{
+                              $check = 'CHECKED';
+
+                        }
+
+
+
+
+
+
+
+            			echo "<input type='checkbox' name='submenu[".$value['sm_id']."]' ".$check.">". $value['sm_title'] . "</input>";
+            			}
+
+
+
+
+
+
+
+            		}
+
+
+            	}
+
+            	 ?>
+                   <BR>
+                   <input type="hidden" name="type" value="<?php echo $type?>" />
+<input type="submit" name="submit" value="submit" />
+                   </form>
         </div>
 </div>
 </div>
