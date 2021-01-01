@@ -49,17 +49,14 @@
 								<tr>
 								<td><?php echo $brandlist["brand_id"]; ?></td>
 								<td><?php echo $brandlist["name"]; ?></td>
-								 <td><a href="?page=editbrand_dashboard&id=<?php  ?>&name=<?php ?> ">Edit</a></td>
-								<td><a href="<?php echo $controller  ?>?id=<?php ?>" onclick="return confirm('Are you sure?')">Delete</a></td>
+								 <td><a href="?page=editbrand_dashboard&id=<?php echo $brandlist["brand_id"];  ?>&name=<?php echo $brandlist["name"]; ?>  ">Edit</a></td>
+								<td><a href="<?php echo $controller  ?>?id=<?php  echo $brandlist["brand_id"];   ?>" onclick="return confirm('Are you sure?')">Delete</a></td>
 							   </tr>
 								<?php } ?>
 					   </tbody>	
 							
 					</table>
-					<form action="" class="brand-update-remove" data-aos="zoom-out-left">
-					<input  class="brand-update" type="button" name="addbtn" value="Update Brand">
-					<input class="brand-remove" type="button" name="addbtn" value="Remove Brand">
-					</form>
+				
 					  </fieldset>
             </div>
             

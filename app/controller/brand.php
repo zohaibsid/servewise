@@ -16,6 +16,21 @@ require $config_service['BRAND_CLASS'];
 	$brand=new Brand();
 	$message=null;
 
+//deleting brand...
+if (isset($_GET["id"])){
+	$brandid = $_GET["id"];
+
+	$deleted = $brand->deletebrand($brandid);
+if (!empty($deleted)){
+	
+	echo "deleted";	
+} else {
+	echo "not deleted";
+}
+	//deleting.....
+}
+
+
 	if(isset($_POST["name"])){
 	
 	$name = $_POST["name"];
