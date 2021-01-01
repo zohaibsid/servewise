@@ -2,14 +2,16 @@
 	  <?php require $footer;?>	
 	<!-- main content -->
 	<div class="wrapper">
+    <h1 data-aos="fade-right"
+     data-aos-duration="1500">Signup Vendor</h1>
 		<div class="row">
-			<div class="col-12 col-m-12 col-sm-12">
+			<div class="signup-dashboard">
 				<div class="container-content">
 					
-                    <div class="user-profile-dis">
+                    <div class="signup-profile-dis">
                         
-                    <form action="<?php echo $controller ?>" method="post" id="form">
-						<div class="user-detail1">
+                    <form class="signup-vendor-form" action="<?php echo $controller ?>" method="post" id="form">
+						<div class="user-detail1 sign-vendor-name" data-aos="fade-right" data-aos-duration="1000">
                             <label>Name.</label>
                             <input name="name" type="text" >
                            
@@ -18,11 +20,13 @@
 							 <label>email id.</label>
                             <input name="email" type="text" >
                         </div>
-                        <div class="user-detail1">
-                            <label>Address.</label>
-                            <input name="address" type="text" >
-                            <label>Address2.</label>
-                            <input name="address2" type="text" >
+                        <div class="user-detail1"  data-aos="fade-left" data-aos-duration="1000">
+                            <div class="signup-address">
+                                <label>Address.</label>
+                                <input name="address" type="text" >
+                                <label>Address2.</label>
+                                <input name="address2" type="text" >
+                            </div>
                             
 					<div class="frmDronpDown">
         <div class="row">
@@ -56,9 +60,11 @@ foreach ($getcountries as $country) {
     </div>		
                         </div >
 						
-						<div class="user-detail1">
-							<input type="button" name="signupbtn" value="Request" onclick="submitForm()">
-						</div>
+						<div class="user-detail1" data-aos="fade-up-left" data-aos-duration="1000">
+                            <div class="signup-vendor-btn">
+							    <input type="button" name="signupbtn" value="Request" onclick="submitForm()">
+                            </div>
+                        </div>
 						</form>
                     </div>
                 </div>

@@ -2184,6 +2184,24 @@ form {
 .reqbranch-content .req-n-c-e label{font-weight: 600;}
 /* Request Branch END */
 
+/* sigupvendor-dashboard */
+.signup-dashboard{width: 100%;}
+.signup-profile-dis .signup-vendor-form{width: 100%;}
+.signup-profile-dis .signup-vendor-form .sign-vendor-name{display: flex;align-items: center;justify-content: center; background: white;padding: 20px 10px;border-radius: 10px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2); margin-bottom: 30px;}
+.signup-profile-dis .signup-vendor-form .sign-vendor-name label{font-weight: 600;}
+.signup-profile-dis .signup-vendor-form .sign-vendor-name input{border-bottom: 1px solid black;margin-right: 20px;margin-left: 10px;}
+.signup-profile-dis .user-detail1{background: white;border-radius: 10px;padding: 20px 10px;margin-bottom: 20px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);}
+.signup-profile-dis .user-detail1 .signup-address{width: 100%;margin-bottom: 20px;}
+.signup-profile-dis .user-detail1 .signup-address label{font-weight: 600; margin-right: 5px;}
+.signup-profile-dis .user-detail1 .signup-address input{border-bottom: 1px solid black; width: 40%; margin-right: 10px;}
+.signup-profile-dis .user-detail1 .frmDronpDown{display: flex;align-items: center;margin-top: 10px;}
+.signup-profile-dis .user-detail1 label{font-weight: 600;margin-right: 10px;}
+.signup-profile-dis .user-detail1 select{border: 1px dashed black;border-radius: 5px;padding: 7px;margin-right: 30px;}
+.signup-profile-dis .user-detail1 .signup-vendor-btn{display: flex;justify-content: flex-end;align-items: center;}
+.signup-profile-dis .user-detail1 .signup-vendor-btn input{background-color: white;padding: 10px;border-radius: 10px;border: 1px solid black;font-weight: 600;font-size: 16px;transition: .3s ease;}
+.signup-profile-dis .user-detail1 .signup-vendor-btn input:hover{background-color: springgreen;color: white;border: 1px solid springgreen;}
+/* sigupvendor-dashboard-end */
+
 /* dashboard-pages-end */
 
 
