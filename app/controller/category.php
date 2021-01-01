@@ -34,7 +34,7 @@ if (!empty($deleted)){
 	$categoryname = $_POST["category"];
     $createdby = $_SESSION['logInId'];    
 	
-	$vbid = $_SESSION['vbid'];
+	$vbid = $_SESSION['vendorid'];
 	
 		$addedcategory = $category->addnewcategory($categoryname,$createdby,$vbid);
 		if (empty($addedcategory)){

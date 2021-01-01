@@ -12,7 +12,7 @@
 			
 			function addnewcategory($categoryname,$createdby,$vbid)
 {
-					$this->query="insert into category(name,created_by,vb_id,created_date) values(?,?,?,CURRENT_DATE())";
+					$this->query="insert into category(name,created_by,vendor_id,created_date) values(?,?,?,CURRENT_DATE())";
 				$result=$this->db->executeQuery($this->query,array($categoryname,$createdby,$vbid),"create");
 					if($result){
 						return $result;
@@ -22,10 +22,10 @@
 						}
 				}
 		
-		function addnewsubcategory($categoryid,$categoryname,$createdby)
+		function addnewsubcategory($categoryid,$categoryname,$vendorid)
 {
-					$this->query="insert into subcategory_2_level(category_id,sub_category,created_by,created_date) values(?,?,?,CURRENT_DATE())";
-				$result=$this->db->executeQuery($this->query,array($categoryid,$categoryname,$createdby),"create");
+					$this->query="insert into subcategory_2_level(category_id,sub_category,vendor_id,created_date) values(?,?,?,CURRENT_DATE())";
+				$result=$this->db->executeQuery($this->query,array($categoryid,$categoryname,$vendorid),"create");
 					if($result){
 						return $result;
 						}    
@@ -34,10 +34,10 @@
 						}
 				}
 		
-		function addnewsubcategorythree($scid,$categoryname,$createdby)
+		function addnewsubcategorythree($scid,$categoryname,$vendorid)
 {
-					$this->query="insert into subcategory_3_level(sc_id,ss_category,created_by,created_date) values(?,?,?,CURRENT_DATE())";
-				$result=$this->db->executeQuery($this->query,array($scid,$categoryname,$createdby),"create");
+					$this->query="insert into subcategory_3_level(sc_id,ss_category,vendor_id,created_date) values(?,?,?,CURRENT_DATE())";
+				$result=$this->db->executeQuery($this->query,array($scid,$categoryname,$vendorid),"create");
 					if($result){
 						return $result;
 						}    
@@ -68,7 +68,7 @@
 		
 		
 				function getcategorybyvbid($vbid){
-					$this->query="select * from category where vb_id=? ";
+					$this->query="select * from category where vendor_id=? ";
 				$result=$this->db->executeQuery($this->query,array($vbid),"cread");
 				return $result;
 				}
@@ -80,7 +80,7 @@
 				}
 		
 				function getcategories(){
-					$this->query="SELECT category.category_id,category.name,subcategory_2_level.sc_id,subcategory_2_level.sub_category,subcategory_2_level.sc_id,subcategory_3_level.ss_category FROM category,subcategory_2_level,subcategory_3_level,vendor_branch WHERE category.vb_id = vendor_branch.vb_id";
+					$this->query="SELECT category.category_id,category.name,subcategory_2_level.sc_id,subcategory_2_level.sub_category,subcategory_2_level.sc_id,subcategory_3_level.ss_category FROM category,subcategory_2_level,subcategory_3_level,vendor WHERE category.vendor_id = vendor.vendor_id";
 				$result=$this->db->executeQuery($this->query,array(),"sread");
 				return $result;
 				}

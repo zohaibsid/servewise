@@ -4,7 +4,7 @@ session_start();
 //echo $_SESSION['logInName'];
 
  require("branch/branchClass.php");
- require($dbcalss);
+ require_once($dbcalss);
 
 	$branch = new Branch();
 	$message=null;

@@ -32,7 +32,10 @@ if(!empty($_POST["password"])){
 			$signIn = $user->newSignIn($username,$password);
 
 			if ($signIn){
-
+				//$userid = $_SESSION['logInId'];
+				
+				//$getvendorid = $user->getvendoridbyuserid($userid);
+				
 					echo '1';
 		}
 

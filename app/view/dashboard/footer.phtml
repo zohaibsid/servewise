@@ -2,60 +2,74 @@
 	<div class="sidebar" style="overflow:scroll;">
 		
 		<ul class="sidebar-nav">
-			<li class="sidebar-nav-item sub-menu">
-				<a href="#" class="sidebar-nav-link  active">
+			<?php 
+			foreach ($menu as $key => $value) {
+				if($value['url'] == '#'){
+
+					$url = $value['url'];
+
+				}else{
+
+					$url = '?page='.$value['url'];
+				}
+
+
+			?>
+
+				<li class="sidebar-nav-item sub-menu">
+				<a href="<?php echo $url;?> " class="sidebar-nav-link">
 					<div>
-                    <i class="fa fa-tachometer" aria-hidden="true"></i>
+                    <i class="fa fa-<?php echo $value['icon'];?> " aria-hidden="true"></i>
 					</div>
 					<span>
-                        Dashboard  
+                        <?php echo $value['title'];?>  
 					</span>
 				</a>
+
+					<?PHP
+$submenu = getsubmenu($value['menu_id']);
+				if (!empty($submenu)) {
+     						
+						
+					?>
 				
 				<ul class="sub">
-					<li>
-						<a href="?page=usermanagement_dashboard">
+					<?php 
+					foreach ($submenu as $key => $value) {
+						?>
+
+<li>
+						<a href="?page=<?php echo $value['sm_url'];?> ">
 						<div class="sub-menu-inner-icon">
-							<i class="fa fa-angle-double-right" aria-hidden="true"></i>
+							<i class="fa fa- <?php echo $value['sm_icon'];?> " aria-hidden="true"></i>
 						</div>
 						<div class="sub-menu-inner-title">
-							user management
+							 <?php echo $value['sm_title'];?>  
 						</div>
 						</a>
 					</li>
-					<li>
-						<a href="?page=adduser_dashboard">
-						<div class="sub-menu-inner-icon">
-                    		<i class="fa fa-angle-double-right" aria-hidden="true"></i>
-						</div>
-						<div class="sub-menu-inner-title">
-							add users
-						</div>
-						</a>
-					</li>
-					<li>
-						<a href="?page=Viewuser_dashboard">
-						<div class="sub-menu-inner-icon">
-                    		<i class="fa fa-angle-double-right" aria-hidden="true"></i>
-						</div>
-						<div class="sub-menu-inner-title">
-							view users
-						</div>
-						</a>
-					</li>
-					<li>
-						<a href="?page=assignuser_dashboard">
-						<div class="sub-menu-inner-icon">
-                    		<i class="fa fa-angle-double-right" aria-hidden="true"></i>
-						</div>
-						<div class="sub-menu-inner-title">
-							assign user roles
-						</div>
-						</a>
-					</li>
+
+						<?php
+					}
+
+					?>
+					
+					
 				</ul>
+				<?php  
+
+}
+				?>
 			</li>
-			<li  class="sidebar-nav-item sub-menu">
+
+			<?php
+
+
+			}
+
+			?>
+			
+		<!-- 	<li  class="sidebar-nav-item sub-menu">
 				<a href="#" class="sidebar-nav-link">
 					<div>
 						<i class="fa fa-usd" aria-hidden="true"></i>
@@ -173,6 +187,7 @@
 						</div>
 						</a>
 					</li>
+					
                     <li>
 						<a href="?page=signupvendor_dashboard">
 						<div class="sub-menu-inner-icon">
@@ -180,6 +195,16 @@
 						</div>
 						<div class="sub-menu-inner-title">
 							Become Vendor
+						</div>
+						</a>
+					</li>
+					<li>
+						<a href="?page=vendorprofile_dashboard">
+						<div class="sub-menu-inner-icon">
+                    		<i class="fa fa-angle-double-right" aria-hidden="true"></i>
+						</div>
+						<div class="sub-menu-inner-title">
+							Vendor Profile
 						</div>
 						</a>
 					</li>
@@ -574,7 +599,7 @@
 						</a>
 					</li>
 				</ul>
-			</li>
+			</li> -->
 		</ul>
 	</div>
 	<!-- end sidebar -->
