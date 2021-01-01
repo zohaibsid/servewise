@@ -27,12 +27,25 @@
 				if($result){
 					$_SESSION["logIn"]=$email;
 					$_SESSION['logInId']=$result[0]['user_id'];
+				
 					return true;
 				}
 				else{
 					return false;
 				}
 			}
+			function getvendoridbyuserid($userid){
+				$this->query="select * from vendor where user_id=? ";
+				$result=$this->db->executeQuery($this->query,array($userid),"cread");
+				if($result){
+					$_SESSION["vendorid"]=$result[0]["vendor_id"];
+					return true;
+				}
+				else{
+					return false;
+				}
+			}
+		
 			
 			function updateuserdetails($fname,$lname,$contactno,$address,$address2,$city,$state,$zip,$country,$emailid){
 				$this->query="update user set first_name=?,last_name=?,contact_no=?,address=?,address_2=?,city=?,state=?,zip=?,country=? where email_id=? ";

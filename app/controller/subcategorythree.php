@@ -33,10 +33,10 @@ if (!empty($deleted)){
 	
 	$categoryid = $_POST["categoryid"];
 		$categoryname = $_POST["category"];
-    $createdby = $_SESSION['logInId'];    
+    $vendorid = $_SESSION['vendorid'];    
 	
 	
-		$addedcategory = $category->addnewsubcategorythree($categoryid,$categoryname,$createdby);
+		$addedcategory = $category->addnewsubcategorythree($categoryid,$categoryname,$vendorid);
 		if (!empty($addedcategory)){
 			//$message[0] = true;
 			//$message[1] = "Updated Successfully";	

@@ -25,6 +25,7 @@
                    
 					   <tbody>
 						 <?php
+						   		if (!empty($getcategory)){
 								foreach($getcategory as $categorylist){
                            ?>
                         
@@ -39,7 +40,11 @@
 								<td><?php echo $categorylist["ss_category"]; ?></td>								
                                 
 							   </tr>
-								<?php } ?>
+								<?php }
+								} else {
+									echo "No record Found";
+								}
+						   ?>
 					   </tbody>	
 							
 					</table>

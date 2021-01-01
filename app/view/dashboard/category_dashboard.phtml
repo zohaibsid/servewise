@@ -29,7 +29,10 @@
                         </thead>
                    
 					   <tbody>
+						   
 						 <?php
+								if (isset($_SESSION['vendorid'])){
+									if (!empty($getcategory)){
 								foreach($getcategory as $categorylist){
                            ?>
                         
@@ -44,7 +47,14 @@
 								<td><a href="<?php echo $controller  ?>?id=<?php echo $categorylist["category_id"]; ?>" onclick="return confirm('Are you sure?')">Delete</a></td>
 								
 							   </tr>
-								<?php } ?>
+								<?php }
+									} else {
+										echo "No Record Found";
+									}
+								} else {
+									echo "first become a vendor";
+								}
+						   ?>
 					   </tbody>	
 							
 					</table>

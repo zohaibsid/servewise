@@ -44,6 +44,27 @@
 						}
 					
 			}
+		
+			function getvendordetails($vendorid){
+				$this->query="select * from vendor where vendor_id=?";
+				$result=$this->db->executeQuery($this->query,array($vendorid),"cread");
+				if($result){
+					return $result;
+					}    
+				    else{
+						return false;
+						}
+			}
+		
+			function updatevendordetails($name,$email,$contactno,$address,$address2,$city,$state,$country,$vendorid){
+				$this->query="update vendor set name=?,email_id=?,contact_no=?,address=?,address_2=?,city=?,state=?,country=? where vendor_id=? ";
+				$result=$this->db->executeQuery($this->query,array($name,$email,$contactno,$address,$address2,$city,$state,$country,$vendorid),"update");
+					if($result){return true;}    
+				    else{
+						return false;
+						}
+					
+			}
 		function getvendordetailsbyuserid($userid){
 				$this->query="select * from vendor where user_id=?";
 				$result=$this->db->executeQuery($this->query,array($userid),"cread");
