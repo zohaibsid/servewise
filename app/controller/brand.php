@@ -35,7 +35,7 @@ if (!empty($deleted)){
 	
 	$name = $_POST["name"];
     $vendorid = $_SESSION['vendorid'];    
-	
+	echo $vendorid;
 	
 	
 		$addedbrand = $brand->addnewbrand($name,$vendorid);

@@ -10,10 +10,10 @@
 				$this->db=new databaseManager();
 			}
 			
-			function addnewbrand($name,$userid)
+			function addnewbrand($name,$vendorid)
 {
 					$this->query="insert into brand(name,vendor_id) values(?,?)";
-				$result=$this->db->executeQuery($this->query,array($name,$userid),"create");
+				$result=$this->db->executeQuery($this->query,array($name,$vendorid),"create");
 					if($result){
 						return $result;
 						}    

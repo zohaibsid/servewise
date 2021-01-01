@@ -2153,13 +2153,37 @@ form {
 .brand-dashboard .brand-content .add-brand{padding: 10px;border-radius: 10px;border: 1px solid black;background: transparent;font-weight: 600;cursor: pointer; transition: .3s ease;}
 .brand-dashboard .brand-content .add-brand:hover{background: rgb(51, 219, 51);border: 1px solid rgb(51, 219, 51);color: white; }
 .brand-dashboard .brand-content label{font-size: 24px;font-weight: 600;}
-.brand-table{padding: 10px;background: white;border-radius: 10px;box-shadow: 0px 3px 6px rgba(0,0,0,0.3);}
+.brand-table{width: 100%; padding: 10px;background: white;border-radius: 10px;box-shadow: 0px 3px 6px rgba(0,0,0,0.3);}
 .brand-update-remove{width: 100%;display: flex;justify-content: flex-end;align-items: center;}
 .brand-update-remove .brand-update{font-size: 14px;font-weight: 600;margin: 10px 10px;border: 1px solid black;padding: 10px;border-radius: 5px;background-color: white; transition: .3s ease;}
 .brand-update-remove .brand-update:hover{background: #16ff77;border: 1px solid #16ff77; color: white;}
 .brand-update-remove .brand-remove{font-size: 14px;font-weight: 600;margin: 10px 10px;border: 1px solid black;padding: 10px;border-radius: 5px;background-color: white; transition: .3s ease;}
 .brand-update-remove .brand-remove:hover{background: #eb3d11;border: 1px solid #eb3d11; color: white;}
 /* add brand - end */
+/* Request Branch */
+
+.reqbranch-main{width: 100%;}
+.reqbranch-main .req-form{width: 100%;}
+.row {align-items: center;}
+.reqbranch-main .req-form .req-choose-vendor{margin: 15px 0px; width: 100%;background: white;padding: 10px;border-radius: 10px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);}
+.reqbranch-main .req-form .req-choose-vendor label{font-size: 20px;font-weight: 600;margin-right: 10px;}
+.reqbranch-main .req-form .req-choose-vendor select{outline: none; width: 260px;font-size: 20px;border-radius: 6px;border: 1px dashed rgba(0,0,0,0.7);}
+.reqbranch-content .user-detail1{background: white;border-radius: 10px;padding: 20px 10px;margin-bottom: 20px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);}
+.reqbranch-content .req-btn{display: flex; justify-content: flex-end;align-items: center;}
+.reqbranch-content .req-btn input{background-color: white; padding: 10px;border-radius: 10px;border: 1px solid black;font-weight: 600;font-size: 16px; transition: .3s ease;}
+.reqbranch-content .req-btn input:hover{background-color: springgreen;color: white;border: 1px solid springgreen;}
+.reqbranch-content .user-detail1 .req-address{width: 100%; display: flex;justify-content: center;align-items: center;}
+.reqbranch-content .user-detail1 .req-address .req-add-1{flex-basis: 50%;margin-bottom: 20px;}
+.reqbranch-content .user-detail1 .req-address .req-add-1 label{font-weight: 600;}
+.reqbranch-content .user-detail1 .req-address .req-add-1 input{width: 80%; border-bottom: 1px solid rgba(0,0,0,0.7);}
+.reqbranch-content .user-detail1 .frmDronpDown{display: flex; margin-bottom: 20px;}
+.reqbranch-content .user-detail1 .frmDronpDown label{margin-right: 10px; font-weight: 600;}
+.reqbranch-content .user-detail1 .frmDronpDown select{border: 1px dashed black;border-radius: 5px;padding: 7px;margin-right: 30px;}
+.reqbranch-content .req-n-c-e{display: flex;justify-content: center;align-items: center;}
+.reqbranch-content .req-n-c-e input{border-bottom: 1px solid black;margin-right: 40px;margin-left: 5px;width: 170px;}
+.reqbranch-content .req-n-c-e label{font-weight: 600;}
+/* Request Branch END */
+
 /* dashboard-pages-end */
 
 

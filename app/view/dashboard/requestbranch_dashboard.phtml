@@ -2,18 +2,16 @@
 	  <?php require $footer;?>	
 	<!-- main content -->
 	<div class="wrapper">
+        <h1 data-aos="fade-right"
+     data-aos-duration="1500">Request Branch</h1>
 		<div class="row">
-			<div class="col-12 col-m-12 col-sm-12">
+			<div class="reqbranch-main" >
 				<div class="container-content">
-					<form action="<?php echo $controller ?>" method="post"  >
-                    <div class="user-profile-dis">
-                        <div class="user-image">
-                          
-                        </div>
-						
+					<form class="req-form" action="<?php echo $controller ?>" method="post"  >
+                    <div class="reqbranch-content" >						
 						<?php  foreach($getvendors as $vendorlist){
 						?>
-						<div>
+						<div class="req-choose-vendor" data-aos="fade-right" data-aos-duration="1000">
 							<label for="vendor">Choose a vendor:</label>
 
 							<select name="vendor" id="vendor">
@@ -23,7 +21,7 @@
 						</div>
 						<?php } ?>
                     
-						<div class="user-detail1">
+						<div class="user-detail1 req-n-c-e" data-aos="fade-left" data-aos-duration="1000">
                             <label>Name.</label>
                             <input name="name" type="text" >
                            
@@ -32,11 +30,17 @@
 							 <label>email id.</label>
                             <input name="email" type="text" >
                         </div>
-                        <div class="user-detail1">
-                            <label>Address.</label>
-                            <input name="address" type="text" >
-                            <label>Address2.</label>
-                            <input name="address2" type="text" >
+                        <div class="user-detail1" data-aos="fade-up-left" data-aos-duration="1000">
+                            <div class="req-address">
+                                <div class="req-add-1">
+                                    <label>Address.</label>
+                                    <input name="address" type="text" >
+                                </div>
+                                <div class="req-add-1">
+                                    <label>Address2.</label>
+                                    <input name="address2" type="text" >
+                                </div>
+                            </div>
                             <div class="frmDronpDown">
         <div class="row">
             <label>Country:</label><br /> <select name="country"
@@ -70,7 +74,7 @@ foreach ($getcountries as $country) {
 							
                         </div >
 						
-						<div class="user-detail1">
+						<div class="user-detail1 req-btn"  data-aos="zoom-in" data-aos-duration="1000">
 							<input type="submit" name="signupbtn" value="Request"  >
 						</div>
 						
