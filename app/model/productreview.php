@@ -4,7 +4,7 @@ session_start();
 //echo $_SESSION['logInName'];
 
  require("product/productClass.php");
- require($dbcalss);
+ require_once($dbcalss);
 
 	$product = new Product();
 	$message=null;
