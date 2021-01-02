@@ -27,7 +27,7 @@ $usertypes = getusertypes();
 <div class="wrapper">
 		<div class="row">
 			<div class="staff-permission-main">
-            <form class="premission-assign" action="#"  method="POST">
+            <form class="premission-assign" action="#"  method="POST" data-aos="fade-right">
                   <p>Premission Assign</p>
             <select onchange="this.form.submit()" name='usertype'>
             	<?php
@@ -63,7 +63,7 @@ $usertypes = getusertypes();
 
 
             	foreach ($menus as $key => $value) {
-                        ECHO '<div class="permission-divs">';
+                        ECHO '<div class="permission-divs" data-aos="fade-up-right"> ';
                               $from = 'menu_id ='.$value['menu_id'] ;
                         $check = ispermissionallowed($type,$from);
 
@@ -74,7 +74,7 @@ $usertypes = getusertypes();
                               $check = 'CHECKED';
 
                         }
-            		echo "<div class='main-pre'> <input class='per-main' type='checkbox' name='menu[".$value['menu_id']."]' ".$check."><div class=pre-main-title>". $value['title'] . "</div></input></div>";
+            		echo "<div class='main-pre'>  <input class='per-main' type='checkbox' name='menu[".$value['menu_id']."]' ".$check."><div class=pre-main-title>". $value['title'] . "</div></input></div>";
 
             		$submenu = getsubmenu($value['menu_id']);
             		if(!empty($submenu)){
