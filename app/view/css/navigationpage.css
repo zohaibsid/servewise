@@ -2202,6 +2202,25 @@ form {
 .signup-profile-dis .user-detail1 .signup-vendor-btn input:hover{background-color: springgreen;color: white;border: 1px solid springgreen;}
 /* sigupvendor-dashboard-end */
 
+/*staff-permission */
+.staff-permission-main{width: 100%;}
+.staff-permission-main .premission-assign{top: 45px; z-index: 999; position: fixed; width: 80%;display: flex;justify-content: center;align-items: center;background: white;padding: 10px;border-radius: 10px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2); margin: 20px 0px;}
+.staff-permission-main .premission-assign p{font-size: 24px;font-weight: 600;color: black;margin-right: 20px;}
+.staff-permission-main .premission-assign select{font-size: 24px;border: 1px dashed black;border-radius: 5px;transition: .3s ease;}
+.staff-permission-main .premission-assign select:hover{transform: scale(1.1);}
+.staff-permission-main .permission-check{width: 100%;}
+.staff-permission-main .permission-divs{padding: 10px;background: white;border-radius: 10px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);margin: 20px 0px;}
+.staff-permission-main .permission-divs .main-pre{margin-top: 20px; display: flex;justify-content: flex-start;align-items: center;padding: 10px;}
+.staff-permission-main .permission-divs .main-pre .per-main{width: 30px;height: 20px;}
+.staff-permission-main .permission-divs .main-pre .pre-main-title{font-size: 30px;font-weight: 600;}
+.staff-permission-main .permission-divs .sub-per{padding: 0px 15px;}
+.staff-permission-main .permission-divs .sub-per input{margin-right: 10px;}
+.staff-permission-main .permission-divs:nth-child(1){margin-top: 100px;}
+.staff-permission-main .permission-btn{background: white;padding: 10px;display: flex;justify-content: center;align-items: center;border-radius: 10px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);}
+.staff-permission-main .permission-btn input{padding: 10px;font-size: 20px;font-weight: 600;background: white;border: 1px solid black;border-radius: 10px;transition: .3s ease;}
+.staff-permission-main .permission-btn input:hover{background-color: springgreen;color: white;border: 1px solid springgreen;}
+/*staff-permission-end */
+
 /* dashboard-pages-end */
 
 

@@ -26,10 +26,9 @@ $usertypes = getusertypes();
 ?>
 <div class="wrapper">
 		<div class="row">
-			<div class="col-3 col-m-6 col-sm-6">
-      
-            <h1>Permissions</h1>
-            <form action="#"  method="POST">
+			<div class="staff-permission-main">
+            <form class="premission-assign" action="#"  method="POST">
+                  <p>Premission Assign</p>
             <select onchange="this.form.submit()" name='usertype'>
             	<?php
 
@@ -52,17 +51,19 @@ $usertypes = getusertypes();
             			<?php
             		} 
             		?>
-				</select>
+                        </select>
+                        
 
                         </form>
+                        
 
-                        <form action="<?php echo $controller?>" method="post">   
+                        <form class="permission-check" action="<?php echo $controller?>" method="post">   
             		<?php
 
 
 
             	foreach ($menus as $key => $value) {
-                        ECHO '<BR>';
+                        ECHO '<div class="permission-divs">';
                               $from = 'menu_id ='.$value['menu_id'] ;
                         $check = ispermissionallowed($type,$from);
 
@@ -73,14 +74,14 @@ $usertypes = getusertypes();
                               $check = 'CHECKED';
 
                         }
-            		echo "<input type='checkbox' name='menu[".$value['menu_id']."]' ".$check."><B>". $value['title'] . "</B></input>";
+            		echo "<div class='main-pre'> <input class='per-main' type='checkbox' name='menu[".$value['menu_id']."]' ".$check."><div class=pre-main-title>". $value['title'] . "</div></input></div>";
 
             		$submenu = getsubmenu($value['menu_id']);
             		if(!empty($submenu)){
+                              
 
 
-
-            			echo '<br>';
+            			
 
 
             			foreach ($submenu as $key => $value) {
@@ -101,24 +102,26 @@ $usertypes = getusertypes();
 
 
 
-            			echo "<input type='checkbox' name='submenu[".$value['sm_id']."]' ".$check.">". $value['sm_title'] . "</input>";
+            			echo "<div class='sub-per'><input type='checkbox' name='submenu[".$value['sm_id']."]' ".$check.">". $value['sm_title'] . "</input></div>";
             			}
 
 
-
+                             
 
 
 
 
             		}
 
-
+                        ECHO '</div>';
             	}
 
             	 ?>
                    <BR>
-                   <input type="hidden" name="type" value="<?php echo $type?>" />
-<input type="submit" name="submit" value="submit" />
+                  <div class="permission-btn">
+                        <input type="hidden" name="type" value="<?php echo $type?>" />
+                        <input type="submit" name="submit" value="submit" />
+                  </div>
                    </form>
         </div>
 </div>
