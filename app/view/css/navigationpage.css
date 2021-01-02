@@ -2294,8 +2294,20 @@ input:checked + .slider:before {-webkit-transform: translateX(26px);-ms-transfor
 .dashboard-footer-bottom .dashboard-footer-bottom-content .d-footer-social-links .footer-social-link-icon input{background: white;border: 1px solid black;border-radius: 10px;padding: 8px;font-size: 20px;font-weight: 600; transition: .3s ease;}
 .dashboard-footer-bottom .dashboard-footer-bottom-content .d-footer-social-links .footer-social-link-icon input:hover{background-color: springgreen;color: white;border: 1px solid springgreen;}
 .dashboard-footer-section-2{width: 100%;display: flex;justify-content: center;align-items: center;margin-top: 20px;}
-
 /* dashboard-footer-end */
+
+/* dashboard-theme */
+
+.dashboard-theme-main{width: 100%; padding: 20px 10px;}
+.theme-selection{display: flex;justify-content: center; width: 100%;flex-wrap: wrap;}
+.theme-selection .theme-seclection-box{flex-basis: 40%;background: white;border-radius: 10px;padding: 10px;box-shadow: 0px 3px 6px rgba(0,0,0,0.2);margin: 10px;}
+.theme-selection .theme-seclection-box .theme-heading{font-size: 30px;font-weight: 600;border-bottom: 1px solid rgba(0,0,0,0.3);}
+.theme-selection .theme-seclection-box .theme-dis{border-bottom: 1px solid rgba(0,0,0,0.3);margin-top: 10px;padding-bottom: 10px;}
+.theme-selection .theme-seclection-box .theme-type span{font-size: 20px;font-weight: 600;margin-left: 10px;}
+.theme-selection .theme-seclection-box .theme-type{border-bottom: 1px solid rgba(0,0,0,0.3);padding-bottom: 10px;margin-top: 10px;}
+.theme-selection .theme-seclection-box .theme-btn input{font-size: 26px;background: white;border: 1px solid black;border-radius: 4px;padding: 4px;margin-top: 10px; transition: .3s ease; }
+.theme-selection .theme-seclection-box .theme-btn input:hover{background-color: springgreen;color: white;border: 1px solid springgreen;}
+/* dashboard-theme-end */
 
 /* dashboard-pages-end */
 
